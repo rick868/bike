@@ -2,15 +2,30 @@ from sqlalchemy import create_engine, Column, Integer, String, Float, Date, Fore
 from sqlalchemy.ext.declarative import declarative_base
 from sqlalchemy.orm import sessionmaker, relationship
 import os
+import logging
+
+logger = logging.getLogger(__name__)
 
 # Get database URL from environment or use SQLite as fallback
-DATABASE_URL = os.getenv('DATABASE_URL', 'sqlite:///dealership.db')
+DATABASE_URL = os.getenv('DATABASE_URL')
+if not DATABASE_URL:
+    logger.warning("DATABASE_URL not found, using SQLite fallback")
+    DATABASE_URL = 'sqlite:///dealership.db'
 
-# Create database engine with PostgreSQL compatible settings
-engine = create_engine(DATABASE_URL, pool_pre_ping=True)
+try:
+    # Create database engine with PostgreSQL compatible settings
+    engine = create_engine(
+        DATABASE_URL,
+        pool_pre_ping=True,
+        pool_size=5,
+        max_overflow=10
+    )
+    logger.info("Database engine created successfully")
+except Exception as e:
+    logger.error(f"Failed to create database engine: {str(e)}")
+    raise
+
 SessionLocal = sessionmaker(autocommit=False, autoflush=False, bind=engine)
-
-# Create declarative base
 Base = declarative_base()
 
 class Motorcycle(Base):
@@ -63,7 +78,12 @@ class MarketData(Base):
 
 # Create all tables
 def init_db():
-    Base.metadata.create_all(bind=engine)
+    try:
+        Base.metadata.create_all(bind=engine)
+        logger.info("Database tables created successfully")
+    except Exception as e:
+        logger.error(f"Failed to create database tables: {str(e)}")
+        raise
 
 # Get database session
 def get_db():

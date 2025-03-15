@@ -7,18 +7,45 @@ from data_generator import populate_database
 from models import MotorcycleDSS
 from analytics import DataAnalytics, CRMAnalytics
 from utils import create_sales_trend_chart, create_inventory_pie_chart, create_customer_satisfaction_gauge, export_to_csv
+import logging
 
-# Initialize database
-init_db()
-populate_database()
+# Configure logging
+logging.basicConfig(level=logging.INFO)
+logger = logging.getLogger(__name__)
 
-# Create database session
-db = next(get_db())
+# Initialize database with error handling
+try:
+    logger.info("Initializing database...")
+    init_db()
+    logger.info("Populating database with sample data...")
+    populate_database()
+    logger.info("Database initialization complete")
+except Exception as e:
+    logger.error(f"Database initialization failed: {str(e)}")
+    st.error("Failed to initialize database. Please check the logs.")
+    st.stop()
 
-# Initialize models
-dss = MotorcycleDSS(db)
-data_analytics = DataAnalytics(db)
-crm_analytics = CRMAnalytics(db)
+# Create database session with error handling
+try:
+    logger.info("Creating database session...")
+    db = next(get_db())
+    logger.info("Database session created successfully")
+except Exception as e:
+    logger.error(f"Failed to create database session: {str(e)}")
+    st.error("Failed to connect to database. Please try again.")
+    st.stop()
+
+# Initialize models with error handling
+try:
+    logger.info("Initializing DSS models...")
+    dss = MotorcycleDSS(db)
+    data_analytics = DataAnalytics(db)
+    crm_analytics = CRMAnalytics(db)
+    logger.info("Models initialized successfully")
+except Exception as e:
+    logger.error(f"Failed to initialize models: {str(e)}")
+    st.error("Failed to initialize application models. Please check the logs.")
+    st.stop()
 
 st.title("Motorcycle Dealership DSS")
 
