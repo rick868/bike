@@ -1,8 +1,11 @@
 import streamlit as st
 import pandas as pd
+import plotly.express as px
+import numpy as np
 from database import get_db, init_db
 from data_generator import populate_database
-from models import MotorcycleDSS, Motorcycle # Added import for Motorcycle model
+from models import MotorcycleDSS
+from analytics import DataAnalytics, CRMAnalytics
 from utils import create_sales_trend_chart, create_inventory_pie_chart, create_customer_satisfaction_gauge, export_to_csv
 
 # Initialize database
@@ -12,15 +15,18 @@ populate_database()
 # Create database session
 db = next(get_db())
 
-# Initialize DSS model with database session
+# Initialize models
 dss = MotorcycleDSS(db)
+data_analytics = DataAnalytics(db)
+crm_analytics = CRMAnalytics(db)
 
 st.title("Motorcycle Dealership DSS")
 
 # Sidebar for navigation
 page = st.sidebar.selectbox(
     "Select Dashboard",
-    ["Overview", "Inventory Management", "Sales Analytics", "Customer Insights", "Forecasting"]
+    ["Overview", "Inventory Management", "Sales Analytics", "Customer Insights", 
+     "Market Analysis", "Forecasting", "What-If Analysis", "Data Import/Export"]
 )
 
 if page == "Overview":
@@ -92,38 +98,129 @@ elif page == "Inventory Management":
 elif page == "Sales Analytics":
     st.header("Sales Analytics")
 
-    sales_metrics = dss.get_sales_metrics()
-    st.metric("Total Sales", f"${sales_metrics['total_sales']:,.2f}")
-    st.metric("Average Customer Satisfaction", f"{sales_metrics['avg_satisfaction']:.1f}/5.0")
+    # Statistical Analysis
+    stats = data_analytics.statistical_analysis('sales')
 
+    col1, col2 = st.columns(2)
+    with col1:
+        st.metric("Total Revenue", f"${stats['total_revenue']:,.2f}")
+        st.metric("Sales Growth", f"{stats['sales_growth']:.1f}%")
+
+    with col2:
+        st.metric("Average Transaction", f"${stats['avg_transaction']:,.2f}")
+
+    # Sales Trends
+    st.subheader("Sales Trends")
     sales_data = dss.get_sales_data()
     st.plotly_chart(create_sales_trend_chart(sales_data))
 
-    # Monthly sales breakdown
-    monthly_sales = sales_data.set_index('date').resample('M')['sales_amount'].sum()
-    st.line_chart(monthly_sales)
+    # Regional Performance
+    st.subheader("Top Performing Regions")
+    regions_df = pd.DataFrame(list(stats['top_regions'].items()), 
+                            columns=['Region', 'Sales'])
+    st.bar_chart(regions_df.set_index('Region'))
 
 elif page == "Customer Insights":
     st.header("Customer Insights")
 
-    customer_metrics = dss.get_customer_metrics()
-    st.metric("Average Customer Lifetime Value", f"${customer_metrics['avg_ltv']:,.2f}")
-    st.metric("Average Purchases per Customer", f"{customer_metrics['avg_purchases']:.1f}")
+    # Customer Segmentation
+    segments = data_analytics.customer_segmentation()
+    st.subheader("Customer Segments")
 
-    customer_data = dss.get_customer_data()
-    st.plotly_chart(create_customer_satisfaction_gauge(customer_data))
+    segment_df = pd.DataFrame(list(segments.items()), 
+                            columns=['Segment', 'Count'])
+    st.plotly_chart(px.pie(segment_df, values='Count', names='Segment',
+                          title='Customer Segmentation'))
 
-    # Customer distribution
-    st.dataframe(customer_data)
+    # Customer Lifetime Value Analysis
+    clv_data = crm_analytics.customer_lifetime_value()
+    st.metric("Average Customer Lifetime Value", 
+              f"${clv_data['average_clv']:,.2f}")
+
+    # Churn Risk Analysis
+    churn_data = crm_analytics.churn_risk_analysis()
+    st.subheader("Churn Risk Distribution")
+    churn_df = pd.DataFrame(list(churn_data.items()),
+                           columns=['Risk Level', 'Count'])
+    st.bar_chart(churn_df.set_index('Risk Level'))
+
+elif page == "Market Analysis":
+    st.header("Market Analysis")
+
+    market_data = pd.read_sql('SELECT * FROM market_data', db.bind)
+
+    # Market Share Trend
+    st.subheader("Market Share Trend")
+    fig_market = px.line(market_data, x='date', y='market_share',
+                        title='Market Share Over Time')
+    st.plotly_chart(fig_market)
+
+    # Economic Indicators
+    st.subheader("Economic Indicators Impact")
+    # Add visualization for economic indicators
 
 elif page == "Forecasting":
     st.header("Sales Forecasting")
 
-    forecast_days = st.slider("Forecast Days", 7, 90, 30)
-    forecast = dss.forecast_sales(periods=forecast_days)
+    periods = st.slider("Forecast Periods (Days)", 7, 90, 30)
+    forecast = data_analytics.sales_forecast(periods=periods)
 
-    st.line_chart(forecast)
+    # Create forecast visualization
+    forecast_df = pd.DataFrame({
+        'Date': forecast['dates'],
+        'Forecast': forecast['predictions'],
+        'Lower Bound': forecast['lower_bound'],
+        'Upper Bound': forecast['upper_bound']
+    })
+
+    st.line_chart(forecast_df.set_index('Date'))
 
     st.write("Forecast Summary:")
-    st.metric("Forecasted Average Daily Sales", f"${forecast.mean():,.2f}")
-    st.metric("Forecasted Total Sales", f"${forecast.sum():,.2f}")
+    st.metric("Average Forecasted Daily Sales", 
+              f"${np.mean(forecast['predictions']):,.2f}")
+
+elif page == "What-If Analysis":
+    st.header("What-If Analysis")
+
+    scenario = st.selectbox(
+        "Select Scenario",
+        ["price_increase", "marketing_boost"]
+    )
+
+    impact = data_analytics.what_if_analysis(scenario)
+
+    st.subheader("Scenario Impact Analysis")
+    for metric, value in impact.items():
+        st.metric(metric.replace('_', ' ').title(), value)
+
+elif page == "Data Import/Export":
+    st.header("Data Import/Export")
+
+    # File Upload
+    uploaded_file = st.file_uploader("Upload CSV File", type="csv")
+    if uploaded_file is not None:
+        table_name = st.selectbox(
+            "Select Table to Import To",
+            ["motorcycles", "customers", "sales", "market_data"]
+        )
+
+        if st.button("Import Data"):
+            data_analytics.import_csv_data(uploaded_file, table_name)
+            st.success(f"Data imported successfully to {table_name} table!")
+
+    # Data Export
+    st.subheader("Export Data")
+    export_table = st.selectbox(
+        "Select Table to Export",
+        ["motorcycles", "customers", "sales", "market_data"]
+    )
+
+    if st.button("Export to CSV"):
+        table_data = pd.read_sql(f'SELECT * FROM {export_table}', db.bind)
+        csv = export_to_csv(table_data, f"{export_table}.csv")
+        st.download_button(
+            label="Download CSV",
+            data=csv,
+            file_name=f"{export_table}.csv",
+            mime="text/csv"
+        )
