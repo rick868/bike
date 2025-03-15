@@ -5,11 +5,11 @@ from database import engine, Base, SessionLocal, Motorcycle, Sale, Customer
 
 def populate_database():
     db = SessionLocal()
-    
+
     # Drop existing tables and recreate
     Base.metadata.drop_all(bind=engine)
     Base.metadata.create_all(bind=engine)
-    
+
     # Check if data already exists
     if db.query(Motorcycle).count() > 0:
         db.close()
@@ -29,15 +29,31 @@ def populate_database():
         )
         db.add(motorcycle)
 
+    # Commit motorcycles first
+    db.commit()
+
+    # Generate customer data
+    for _ in range(200):
+        customer = Customer(
+            lifetime_value=round(np.random.uniform(5000, 100000), 2),
+            purchases=np.random.randint(1, 5),
+            satisfaction_score=round(np.random.uniform(3.0, 5.0), 1)
+        )
+        db.add(customer)
+
+    # Commit customers before creating sales
+    db.commit()
+
+    # Get all motorcycles and customers for sales generation
+    motorcycles = db.query(Motorcycle).all()
+    customers = db.query(Customer).all()
+
     # Generate sales data
     dates = pd.date_range(
         start=datetime.now() - timedelta(days=365),
         end=datetime.now(),
         periods=500
     )
-
-    motorcycles = db.query(Motorcycle).all()
-    customers = db.query(Customer).all()
     regions = ['North', 'South', 'East', 'West', 'Central']
     channels = ['Online', 'Offline', 'Dealer']
     promotions = ['Season Sale', 'Holiday Special', 'None', 'First Time Buyer']
@@ -58,18 +74,8 @@ def populate_database():
         )
         db.add(sale)
 
-    # Generate customer data
-    for _ in range(200):
-        customer = Customer(
-            lifetime_value=round(np.random.uniform(5000, 100000), 2),
-            purchases=np.random.randint(1, 5),
-            satisfaction_score=round(np.random.uniform(3.0, 5.0), 1)
-        )
-        db.add(customer)
-
     db.commit()
     db.close()
 
 if __name__ == "__main__":
-    init_db()
     populate_database()

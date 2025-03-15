@@ -12,6 +12,8 @@ if not DATABASE_URL:
     logger.warning("DATABASE_URL not found, using SQLite fallback")
     DATABASE_URL = 'sqlite:///dealership.db'
 elif 'postgres' in DATABASE_URL:
+    # Remove any existing sslmode parameter
+    DATABASE_URL = DATABASE_URL.split('?')[0]
     # Add SSL mode for PostgreSQL connections
     DATABASE_URL = f"{DATABASE_URL}?sslmode=require"
 
@@ -40,6 +42,9 @@ class Motorcycle(Base):
     price = Column(Float)
     year = Column(Integer)
     stock = Column(Integer)
+    specifications = Column(JSON)  # Store detailed specs
+    market_position = Column(Text)  # Market positioning data
+    competitor_prices = Column(JSON)  # Competitor pricing data
 
 class Sale(Base):
     __tablename__ = "sales"
