@@ -1,12 +1,15 @@
 import pandas as pd
 import numpy as np
 from datetime import datetime, timedelta
-from database import init_db, SessionLocal, Motorcycle, Sale, Customer
+from database import engine, Base, SessionLocal, Motorcycle, Sale, Customer
 
 def populate_database():
-    init_db()
     db = SessionLocal()
-
+    
+    # Drop existing tables and recreate
+    Base.metadata.drop_all(bind=engine)
+    Base.metadata.create_all(bind=engine)
+    
     # Check if data already exists
     if db.query(Motorcycle).count() > 0:
         db.close()

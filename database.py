@@ -11,6 +11,9 @@ DATABASE_URL = os.getenv('DATABASE_URL')
 if not DATABASE_URL:
     logger.warning("DATABASE_URL not found, using SQLite fallback")
     DATABASE_URL = 'sqlite:///dealership.db'
+elif 'postgres' in DATABASE_URL:
+    # Add SSL mode for PostgreSQL connections
+    DATABASE_URL = f"{DATABASE_URL}?sslmode=require"
 
 try:
     # Create database engine with PostgreSQL compatible settings
