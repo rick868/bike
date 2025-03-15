@@ -4,6 +4,7 @@ from datetime import datetime, timedelta
 from database import init_db, SessionLocal, Motorcycle, Sale, Customer
 
 def populate_database():
+    init_db()
     db = SessionLocal()
 
     # Check if data already exists
