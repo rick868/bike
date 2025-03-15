@@ -3,11 +3,11 @@ from sqlalchemy.ext.declarative import declarative_base
 from sqlalchemy.orm import sessionmaker, relationship
 import os
 
-# Get database URL from environment
-DATABASE_URL = os.getenv('DATABASE_URL')
+# Get database URL from environment or use SQLite as fallback
+DATABASE_URL = os.getenv('DATABASE_URL', 'sqlite:///dealership.db')
 
-# Create database engine
-engine = create_engine(DATABASE_URL)
+# Create database engine with PostgreSQL compatible settings
+engine = create_engine(DATABASE_URL, pool_pre_ping=True)
 SessionLocal = sessionmaker(autocommit=False, autoflush=False, bind=engine)
 
 # Create declarative base
@@ -44,16 +44,9 @@ class Customer(Base):
     __tablename__ = "customers"
 
     id = Column(Integer, primary_key=True, index=True)
-    name = Column(String)
-    email = Column(String, unique=True)
-    phone = Column(String)
-    address = Column(String)
-    lifetime_value = Column(Float)
-    purchases = Column(Integer)
-    satisfaction_score = Column(Float)
-    preferences = Column(JSON)  # Store customer preferences
-    interaction_history = Column(JSON)  # Store interaction timeline
-    segment = Column(String)  # Customer segment category
+    lifetime_value = Column(Float, default=0.0)
+    purchases = Column(Integer, default=0)
+    satisfaction_score = Column(Float, default=0.0)
 
 class MarketData(Base):
     __tablename__ = "market_data"
