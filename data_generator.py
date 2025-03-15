@@ -32,12 +32,25 @@ def populate_database():
         periods=500
     )
 
+    motorcycles = db.query(Motorcycle).all()
+    customers = db.query(Customer).all()
+    regions = ['North', 'South', 'East', 'West', 'Central']
+    channels = ['Online', 'Offline', 'Dealer']
+    promotions = ['Season Sale', 'Holiday Special', 'None', 'First Time Buyer']
+
     for date in dates:
+        motorcycle = np.random.choice(motorcycles)
+        customer = np.random.choice(customers)
         sale = Sale(
             date=date,
+            motorcycle_id=motorcycle.id,
+            customer_id=customer.id,
             sales_amount=round(np.random.uniform(5000, 30000), 2),
             units_sold=np.random.randint(1, 5),
-            customer_satisfaction=round(np.random.uniform(3.5, 5.0), 1)
+            customer_satisfaction=round(np.random.uniform(3.5, 5.0), 1),
+            sales_channel=np.random.choice(channels),
+            promotion_applied=np.random.choice(promotions),
+            sales_region=np.random.choice(regions)
         )
         db.add(sale)
 
