@@ -42,4 +42,4 @@ def create_customer_satisfaction_gauge(customer_df):
     return fig
 
 def export_to_csv(df, filename):
-    return df.to_csv(filename, index=False).encode('utf-8')
+    return df.to_csv(index=False).encode('utf-8')
