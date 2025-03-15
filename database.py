@@ -22,9 +22,6 @@ class Motorcycle(Base):
     price = Column(Float)
     year = Column(Integer)
     stock = Column(Integer)
-    specifications = Column(JSON)  # Store detailed specs
-    market_position = Column(Text)  # Market positioning data
-    competitor_prices = Column(JSON)  # Competitor pricing data
 
 class Sale(Base):
     __tablename__ = "sales"
