@@ -146,7 +146,7 @@ def login(username, password):
 def logout():
     st.session_state.authenticated = False
     st.session_state.username = None
-    st.experimental_rerun()
+    st.rerun()
 
 # Initialize database and models only if authenticated or on login page
 if st.session_state.authenticated:
@@ -219,7 +219,7 @@ if not st.session_state.authenticated:
         if st.button("Login"):
             if login(username, password):
                 st.success("Login successful!")
-                st.experimental_rerun()
+                st.rerun()
             else:
                 st.error("Invalid credentials")
 
@@ -332,15 +332,15 @@ if page == "🏠 Home":
     with col1:
         if st.button("📊 View Dashboard"):
             st.session_state.page = "📊 Dashboard"
-            st.experimental_rerun()
+            st.rerun()
     with col2:
         if st.button("📦 Manage Inventory"):
             st.session_state.page = "📦 Inventory"
-            st.experimental_rerun()
+            st.rerun()
     with col3:
         if st.button("💰 Sales Analytics"):
             st.session_state.page = "💰 Sales"
-            st.experimental_rerun()
+            st.rerun()
 
 elif page == "📊 Dashboard":
     st.header("Dashboard Overview")
