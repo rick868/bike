@@ -22,6 +22,12 @@ st.set_page_config(
     initial_sidebar_state="expanded"
 )
 
+# Initialize session state for authentication
+if 'authenticated' not in st.session_state:
+    st.session_state.authenticated = False
+if 'username' not in st.session_state:
+    st.session_state.username = None
+
 # Custom CSS
 st.markdown("""
     <style>
@@ -70,54 +76,115 @@ st.markdown("""
         background-color: #0056b3;
         text-decoration: none;
     }
+    .login-container {
+        max-width: 400px;
+        margin: 2rem auto;
+        padding: 2rem;
+        border: 1px solid #dee2e6;
+        border-radius: 5px;
+        background: white;
+    }
     </style>
 """, unsafe_allow_html=True)
 
-# Initialize database with error handling
-try:
-    logger.info("Initializing database...")
-    init_db()
-    logger.info("Populating database with sample data...")
-    populate_database()
+# Login function
+def login(username, password):
+    # Demo credentials - In production, use proper authentication
+    if username == "admin" and password == "admin":
+        st.session_state.authenticated = True
+        st.session_state.username = username
+        return True
+    return False
 
-    # Import additional sales data
+# Logout function
+def logout():
+    st.session_state.authenticated = False
+    st.session_state.username = None
+    st.experimental_rerun()
+
+# Initialize database and models only if authenticated or on login page
+if st.session_state.authenticated:
     try:
-        logger.info("Importing additional sales data...")
-        sales_data = pd.read_csv('UpdatedMotorcycleSales.csv')
-        sales_data.to_sql('sales', next(get_db()).bind, if_exists='append', index=False)
-        logger.info("Additional sales data imported successfully")
+        logger.info("Initializing database...")
+        init_db()
+        logger.info("Populating database with sample data...")
+        populate_database()
+
+        # Import additional sales data
+        try:
+            logger.info("Importing additional sales data...")
+            sales_data = pd.read_csv('UpdatedMotorcycleSales.csv')
+            sales_data.to_sql('sales', next(get_db()).bind, if_exists='append', index=False)
+            logger.info("Additional sales data imported successfully")
+        except Exception as e:
+            logger.warning(f"Could not import additional sales data: {str(e)}")
+
+        logger.info("Database initialization complete")
     except Exception as e:
-        logger.warning(f"Could not import additional sales data: {str(e)}")
+        logger.error(f"Database initialization failed: {str(e)}")
+        st.error("Failed to initialize database. Please check the logs.")
+        st.stop()
 
-    logger.info("Database initialization complete")
-except Exception as e:
-    logger.error(f"Database initialization failed: {str(e)}")
-    st.error("Failed to initialize database. Please check the logs.")
-    st.stop()
+    try:
+        logger.info("Creating database session...")
+        db = next(get_db())
+        logger.info("Database session created successfully")
+    except Exception as e:
+        logger.error(f"Failed to create database session: {str(e)}")
+        st.error("Failed to connect to database. Please try again.")
+        st.stop()
 
-# Create database session with error handling
-try:
-    logger.info("Creating database session...")
-    db = next(get_db())
-    logger.info("Database session created successfully")
-except Exception as e:
-    logger.error(f"Failed to create database session: {str(e)}")
-    st.error("Failed to connect to database. Please try again.")
-    st.stop()
+    try:
+        logger.info("Initializing DSS models...")
+        dss = MotorcycleDSS(db)
+        data_analytics = DataAnalytics(db)
+        crm_analytics = CRMAnalytics(db)
+        logger.info("Models initialized successfully")
+    except Exception as e:
+        logger.error(f"Failed to initialize models: {str(e)}")
+        st.error("Failed to initialize application models. Please check the logs.")
+        st.stop()
 
-# Initialize models with error handling
-try:
-    logger.info("Initializing DSS models...")
-    dss = MotorcycleDSS(db)
-    data_analytics = DataAnalytics(db)
-    crm_analytics = CRMAnalytics(db)
-    logger.info("Models initialized successfully")
-except Exception as e:
-    logger.error(f"Failed to initialize models: {str(e)}")
-    st.error("Failed to initialize application models. Please check the logs.")
-    st.stop()
+# Display header with logo
+st.markdown("""
+    <div class="header-container">
+        <img src="static/voyager_logo.svg" alt="Voyager Logo" width="200">
+        <div>
+""" + (f"""
+            <span style="margin-right: 1rem; color: #6c757d;">Welcome, {st.session_state.username}</span>
+            <a href="#" class="login-btn" onclick="logoutClick()">Logout</a>
+""" if st.session_state.authenticated else """
+            <a href="#" class="login-btn">Login</a>
+""") + """
+        </div>
+    </div>
+""", unsafe_allow_html=True)
 
-# Sidebar navigation with icons
+# Login page when not authenticated
+if not st.session_state.authenticated:
+    st.markdown("<h1 class='centered-text'>Welcome to Voyager</h1>", unsafe_allow_html=True)
+
+    with st.container():
+        st.markdown('<div class="login-container">', unsafe_allow_html=True)
+        st.subheader("Login")
+        username = st.text_input("Username")
+        password = st.text_input("Password", type="password")
+
+        if st.button("Login"):
+            if login(username, password):
+                st.success("Login successful!")
+                st.experimental_rerun()
+            else:
+                st.error("Invalid credentials")
+
+        st.markdown("</div>", unsafe_allow_html=True)
+
+        # Show demo credentials for testing
+        st.info("Demo credentials: username: admin, password: admin")
+
+    st.stop()  # Stop execution if not authenticated
+
+# Sidebar navigation with icons (only shown when authenticated)
 st.sidebar.title("Navigation")
 page = st.sidebar.selectbox(
     "Select Page",
@@ -126,14 +193,7 @@ page = st.sidebar.selectbox(
      "🎯 What-If", "📥 Data"]
 )
 
-# Display logo and login button
-st.markdown("""
-    <div class="header-container">
-        <img src="static/voyager_logo.svg" alt="Voyager Logo" width="200">
-        <a href="#" class="login-btn">Login</a>
-    </div>
-""", unsafe_allow_html=True)
-
+# Display logo and login button (moved here after authentication check)
 
 # Main content area
 if page == "🏠 Home":
