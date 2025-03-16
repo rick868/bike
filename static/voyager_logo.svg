@@ -1,0 +1,10 @@
+<svg width="200" height="50" xmlns="http://www.w3.org/2000/svg">
+  <style>
+    .logo-text { font-family: Arial, sans-serif; font-weight: bold; }
+    .motorcycle { fill: #007bff; }
+  </style>
+  <g transform="translate(10,35)">
+    <path class="motorcycle" d="M20,0 C18,-10 25,-15 35,-15 L45,-15 C55,-15 60,-10 60,0 M30,-5 L50,-5 M25,0 C25,5 20,10 15,10 C10,10 5,5 5,0 C5,-5 10,-10 15,-10 C20,-10 25,-5 25,0 M55,0 C55,5 50,10 45,10 C40,10 35,5 35,0 C35,-5 40,-10 45,-10 C50,-10 55,-5 55,0"/>
+    <text x="70" y="0" class="logo-text" font-size="24" fill="#212529">VOYAGER</text>
+  </g>
+</svg>

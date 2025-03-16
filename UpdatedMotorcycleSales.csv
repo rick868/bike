@@ -1,0 +1,332 @@
+ORDERNUMBER,QUANTITYORDERED,PRICEEACH,ORDERLINENUMBER,SALES,ORDERDATE,STATUS,QTR_ID,MONTH_ID,YEAR_ID,PRODUCTLINE,MSRP,PRODUCTCODE,CUSTOMERNAME,PHONE,ADDRESSLINE1,ADDRESSLINE2,CITY,STATE,POSTALCODE,COUNTRY,TERRITORY,CONTACTLASTNAME,CONTACTFIRSTNAME,DEALSIZE,CATEGORY
+10107,30,95.7,2,2871.0,2/24/2003 0:00,Shipped,1,2,2003,Motorcycles,95,S10_1678,Land of Toys Inc.,2125557818,897 Long Airport Avenue,,NYC,NY,10022,USA,,Yu,Kwai,Small,dirtbike
+10121,34,81.35,5,2765.9,5/7/2003 0:00,Shipped,2,5,2003,Motorcycles,95,S10_1678,Reims Collectables,26.47.1555,59 rue de l'Abbaye,,Reims,,51100,France,EMEA,Henriot,Paul,Small,dirtbike
+10134,41,94.74,2,3884.34,7/1/2003 0:00,Shipped,3,7,2003,Motorcycles,95,S10_1678,Lyon Souveniers,+33 1 46 62 7555,27 rue du Colonel Pierre Avia,,Paris,,75508,France,EMEA,Da Cunha,Daniel,Medium,dirtbike
+10145,45,83.26,6,3746.7,8/25/2003 0:00,Shipped,3,8,2003,Motorcycles,95,S10_1678,Toys4GrownUps.com,6265557265,78934 Hillside Dr.,,Pasadena,CA,90003,USA,,Young,Julie,Medium,dirtbike
+10159,49,100.0,14,5205.27,10/10/2003 0:00,Shipped,4,10,2003,Motorcycles,95,S10_1678,Corporate Gift Ideas Co.,6505551386,7734 Strong St.,,San Francisco,CA,,USA,,Brown,Julie,Medium,dirtbike
+10168,36,96.66,1,3479.76,10/28/2003 0:00,Shipped,4,10,2003,Motorcycles,95,S10_1678,Technics Stores Inc.,6505556809,9408 Furth Circle,,Burlingame,CA,94217,USA,,Hirano,Juri,Medium,dirtbike
+10180,29,86.13,9,2497.77,11/11/2003 0:00,Shipped,4,11,2003,Motorcycles,95,S10_1678,Daedalus Designs Imports,20.16.1555,"184, chausse de Tournai",,Lille,,59000,France,EMEA,Rance,Martine,Small,dirtbike
+10188,48,100.0,1,5512.32,11/18/2003 0:00,Shipped,4,11,2003,Motorcycles,95,S10_1678,Herkku Gifts,+47 2267 3215,"Drammen 121, PR 744 Sentrum",,Bergen,,N 5804,Norway,EMEA,Oeztan,Veysel,Medium,dirtbike
+10201,22,98.57,2,2168.54,12/1/2003 0:00,Shipped,4,12,2003,Motorcycles,95,S10_1678,Mini Wheels Co.,6505555787,5557 North Pendale Street,,San Francisco,CA,,USA,,Murphy,Julie,Small,dirtbike
+10211,41,100.0,14,4708.44,1/15/2004 0:00,Shipped,1,1,2004,Motorcycles,95,S10_1678,Auto Canal Petit,(1) 47.55.6555,"25, rue Lauriston",,Paris,,75016,France,EMEA,Perrier,Dominique,Medium,dirtbike
+10223,37,100.0,1,3965.66,2/20/2004 0:00,Shipped,1,2,2004,Motorcycles,95,S10_1678,"Australian Collectors, Co.",03 9520 4555,636 St Kilda Road,Level 3,Melbourne,Victoria,3004,Australia,APAC,Ferguson,Peter,Medium,dirtbike
+10237,23,100.0,7,2333.12,4/5/2004 0:00,Shipped,2,4,2004,Motorcycles,95,S10_1678,Vitachrome Inc.,2125551500,2678 Kingston Rd.,Suite 101,NYC,NY,10022,USA,,Frick,Michael,Small,dirtbike
+10251,28,100.0,2,3188.64,5/18/2004 0:00,Shipped,2,5,2004,Motorcycles,95,S10_1678,Tekni Collectables Inc.,2015559350,7476 Moss Rd.,,Newark,NJ,94019,USA,,Brown,William,Medium,dirtbike
+10263,34,100.0,2,3676.76,6/28/2004 0:00,Shipped,2,6,2004,Motorcycles,95,S10_1678,Gift Depot Inc.,2035552570,25593 South Bay Ln.,,Bridgewater,CT,97562,USA,,King,Julie,Medium,dirtbike
+10275,45,92.83,1,4177.35,7/23/2004 0:00,Shipped,3,7,2004,Motorcycles,95,S10_1678,La Rochelle Gifts,40.67.8555,"67, rue des Cinquante Otages",,Nantes,,44000,France,EMEA,Labrune,Janine,Medium,dirtbike
+10285,36,100.0,6,4099.68,8/27/2004 0:00,Shipped,3,8,2004,Motorcycles,95,S10_1678,Marta's Replicas Co.,6175558555,39323 Spinnaker Dr.,,Cambridge,MA,51247,USA,,Hernandez,Marta,Medium,dirtbike
+10299,23,100.0,9,2597.39,9/30/2004 0:00,Shipped,3,9,2004,Motorcycles,95,S10_1678,"Toys of Finland, Co.",90-224 8555,Keskuskatu 45,,Helsinki,,21240,Finland,EMEA,Karttunen,Matti,Small,dirtbike
+10309,41,100.0,5,4394.38,10/15/2004 0:00,Shipped,4,10,2004,Motorcycles,95,S10_1678,Baane Mini Imports,07-98 9555,Erling Skakkes gate 78,,Stavern,,4110,Norway,EMEA,Bergulfsen,Jonas,Medium,dirtbike
+10318,46,94.74,1,4358.04,11/2/2004 0:00,Shipped,4,11,2004,Motorcycles,95,S10_1678,Diecast Classics Inc.,2155551555,7586 Pompton St.,,Allentown,PA,70267,USA,,Yu,Kyung,Medium,dirtbike
+10329,42,100.0,1,4396.14,11/15/2004 0:00,Shipped,4,11,2004,Motorcycles,95,S10_1678,Land of Toys Inc.,2125557818,897 Long Airport Avenue,,NYC,NY,10022,USA,,Yu,Kwai,Medium,dirtbike
+10341,41,100.0,9,7737.93,11/24/2004 0:00,Shipped,4,11,2004,Motorcycles,95,S10_1678,Salzburg Collectables,6562-9555,Geislweg 14,,Salzburg,,5020,Austria,EMEA,Pipps,Georg,Large,dirtbike
+10361,20,72.55,13,1451.0,12/17/2004 0:00,Shipped,4,12,2004,Motorcycles,95,S10_1678,Souveniers And Things Co.,+61 2 9495 8555,"Monitor Money Building, 815 Pacific Hwy",Level 6,Chatswood,NSW,2067,Australia,APAC,Huxley,Adrian,Small,dirtbike
+10375,21,34.91,12,733.11,2/3/2005 0:00,Shipped,1,2,2005,Motorcycles,95,S10_1678,La Rochelle Gifts,40.67.8555,"67, rue des Cinquante Otages",,Nantes,,44000,France,EMEA,Labrune,Janine,Small,dirtbike
+10388,42,76.36,4,3207.12,3/3/2005 0:00,Shipped,1,3,2005,Motorcycles,95,S10_1678,FunGiftIdeas.com,5085552555,1785 First Street,,New Bedford,MA,50553,USA,,Benitez,Violeta,Medium,dirtbike
+10403,24,100.0,7,2434.56,4/8/2005 0:00,Shipped,2,4,2005,Motorcycles,95,S10_1678,"UK Collectables, Ltd.",(171) 555-2282,Berkeley Gardens 12  Brewery,,Liverpool,,WX1 6LT,UK,EMEA,Devon,Elizabeth,Small,dirtbike
+10417,66,100.0,2,7516.08,5/13/2005 0:00,Disputed,2,5,2005,Motorcycles,95,S10_1678,Euro Shopping Channel,(91) 555 94 44,"C/ Moralzarzal, 86",,Madrid,,28034,Spain,EMEA,Freyre,Diego,Large,dirtbike
+10107,39,99.91,5,3896.49,2/24/2003 0:00,Shipped,1,2,2003,Motorcycles,118,S10_2016,Land of Toys Inc.,2125557818,897 Long Airport Avenue,,NYC,NY,10022,USA,,Yu,Kwai,Medium,dirtbike
+10120,29,96.34,3,2793.86,4/29/2003 0:00,Shipped,2,4,2003,Motorcycles,118,S10_2016,"Australian Collectors, Co.",03 9520 4555,636 St Kilda Road,Level 3,Melbourne,Victoria,3004,Australia,APAC,Ferguson,Peter,Small,dirtbike
+10134,27,100.0,5,3307.77,7/1/2003 0:00,Shipped,3,7,2003,Motorcycles,118,S10_2016,Lyon Souveniers,+33 1 46 62 7555,27 rue du Colonel Pierre Avia,,Paris,,75508,France,EMEA,Da Cunha,Daniel,Medium,dirtbike
+10145,37,100.0,9,5192.95,8/25/2003 0:00,Shipped,3,8,2003,Motorcycles,118,S10_2016,Toys4GrownUps.com,6265557265,78934 Hillside Dr.,,Pasadena,CA,90003,USA,,Young,Julie,Medium,dirtbike
+10159,37,100.0,17,5016.83,10/10/2003 0:00,Shipped,4,10,2003,Motorcycles,118,S10_2016,Corporate Gift Ideas Co.,6505551386,7734 Strong St.,,San Francisco,CA,,USA,,Brown,Julie,Medium,dirtbike
+10168,27,100.0,4,3660.93,10/28/2003 0:00,Shipped,4,10,2003,Motorcycles,118,S10_2016,Technics Stores Inc.,6505556809,9408 Furth Circle,,Burlingame,CA,94217,USA,,Hirano,Juri,Medium,dirtbike
+10180,42,100.0,12,4695.6,11/11/2003 0:00,Shipped,4,11,2003,Motorcycles,118,S10_2016,Daedalus Designs Imports,20.16.1555,"184, chausse de Tournai",,Lille,,59000,France,EMEA,Rance,Martine,Medium,dirtbike
+10188,38,96.34,4,3660.92,11/18/2003 0:00,Shipped,4,11,2003,Motorcycles,118,S10_2016,Herkku Gifts,+47 2267 3215,"Drammen 121, PR 744 Sentrum",,Bergen,,N 5804,Norway,EMEA,Oeztan,Veysel,Medium,dirtbike
+10201,24,100.0,5,3025.92,12/1/2003 0:00,Shipped,4,12,2003,Motorcycles,118,S10_2016,Mini Wheels Co.,6505555787,5557 North Pendale Street,,San Francisco,CA,,USA,,Murphy,Julie,Medium,dirtbike
+10210,23,100.0,2,3009.09,1/12/2004 0:00,Shipped,1,1,2004,Motorcycles,118,S10_2016,Osaka Souveniers Co.,+81 06 6342 5555,"Dojima Avanza 4F, 1-6-20 Dojima, Kita-ku",,Osaka,Osaka,530-0003,Japan,Japan,Kentary,Mory,Medium,dirtbike
+10223,47,100.0,4,5422.39,2/20/2004 0:00,Shipped,1,2,2004,Motorcycles,118,S10_2016,"Australian Collectors, Co.",03 9520 4555,636 St Kilda Road,Level 3,Melbourne,Victoria,3004,Australia,APAC,Ferguson,Peter,Medium,dirtbike
+10236,22,100.0,1,2852.08,4/3/2004 0:00,Shipped,2,4,2004,Motorcycles,118,S10_2016,Motor Mint Distributors Inc.,2155559857,11328 Douglas Av.,,Philadelphia,PA,71270,USA,,Hernandez,Rosa,Small,dirtbike
+10251,44,100.0,5,5756.52,5/18/2004 0:00,Shipped,2,5,2004,Motorcycles,118,S10_2016,Tekni Collectables Inc.,2015559350,7476 Moss Rd.,,Newark,NJ,94019,USA,,Brown,William,Medium,dirtbike
+10263,40,100.0,5,4472.0,6/28/2004 0:00,Shipped,2,6,2004,Motorcycles,118,S10_2016,Gift Depot Inc.,2035552570,25593 South Bay Ln.,,Bridgewater,CT,97562,USA,,King,Julie,Medium,dirtbike
+10275,22,100.0,4,2904.44,7/23/2004 0:00,Shipped,3,7,2004,Motorcycles,118,S10_2016,La Rochelle Gifts,40.67.8555,"67, rue des Cinquante Otages",,Nantes,,44000,France,EMEA,Labrune,Janine,Small,dirtbike
+10285,47,100.0,9,6484.59,8/27/2004 0:00,Shipped,3,8,2004,Motorcycles,118,S10_2016,Marta's Replicas Co.,6175558555,39323 Spinnaker Dr.,,Cambridge,MA,51247,USA,,Hernandez,Marta,Medium,dirtbike
+10298,39,96.34,1,3757.26,9/27/2004 0:00,Shipped,3,9,2004,Motorcycles,118,S10_2016,Atelier graphique,40.32.2555,"54, rue Royale",,Nantes,,44000,France,EMEA,Schmitt,Carine,Medium,dirtbike
+10308,34,100.0,2,4043.96,10/15/2004 0:00,Shipped,4,10,2004,Motorcycles,118,S10_2016,Mini Classics,9145554562,3758 North Pendale Street,,White Plains,NY,24067,USA,,Frick,Steve,Medium,dirtbike
+10318,45,100.0,4,5566.5,11/2/2004 0:00,Shipped,4,11,2004,Motorcycles,118,S10_2016,Diecast Classics Inc.,2155551555,7586 Pompton St.,,Allentown,PA,70267,USA,,Yu,Kyung,Medium,dirtbike
+10329,20,100.0,2,3176.0,11/15/2004 0:00,Shipped,4,11,2004,Motorcycles,118,S10_2016,Land of Toys Inc.,2125557818,897 Long Airport Avenue,,NYC,NY,10022,USA,,Yu,Kwai,Medium,dirtbike
+10339,40,68.92,4,2756.8,11/23/2004 0:00,Shipped,4,11,2004,Motorcycles,118,S10_2016,"Tokyo Collectables, Ltd",+81 3 3584 0555,2-2-8 Roppongi,,Minato-ku,Tokyo,106-0032,Japan,Japan,Shimamura,Akiko,Small,dirtbike
+10361,26,51.15,8,1329.9,12/17/2004 0:00,Shipped,4,12,2004,Motorcycles,118,S10_2016,Souveniers And Things Co.,+61 2 9495 8555,"Monitor Money Building, 815 Pacific Hwy",Level 6,Chatswood,NSW,2067,Australia,APAC,Huxley,Adrian,Small,dirtbike
+10374,39,100.0,5,5288.01,2/2/2005 0:00,Shipped,1,2,2005,Motorcycles,118,S10_2016,"Australian Gift Network, Co",61-7-3844-6555,31 Duncan St. West End,,South Brisbane,Queensland,4101,Australia,APAC,Calaghan,Tony,Medium,dirtbike
+10388,50,44.51,5,2225.5,3/3/2005 0:00,Shipped,1,3,2005,Motorcycles,118,S10_2016,FunGiftIdeas.com,5085552555,1785 First Street,,New Bedford,MA,50553,USA,,Benitez,Violeta,Small,dirtbike
+10402,45,100.0,1,5833.8,4/7/2005 0:00,Shipped,2,4,2005,Motorcycles,118,S10_2016,Auto Canal Petit,(1) 47.55.6555,"25, rue Lauriston",,Paris,,75016,France,EMEA,Perrier,Dominique,Medium,sportsbike
+10417,45,100.0,5,5887.35,5/13/2005 0:00,Disputed,2,5,2005,Motorcycles,118,S10_2016,Euro Shopping Channel,(91) 555 94 44,"C/ Moralzarzal, 86",,Madrid,,28034,Spain,EMEA,Freyre,Diego,Medium,sportsbike
+10107,27,100.0,4,6065.55,2/24/2003 0:00,Shipped,1,2,2003,Motorcycles,193,S10_4698,Land of Toys Inc.,2125557818,897 Long Airport Avenue,,NYC,NY,10022,USA,,Yu,Kwai,Medium,sportsbike
+10120,46,100.0,2,9264.86,4/29/2003 0:00,Shipped,2,4,2003,Motorcycles,193,S10_4698,"Australian Collectors, Co.",03 9520 4555,636 St Kilda Road,Level 3,Melbourne,Victoria,3004,Australia,APAC,Ferguson,Peter,Large,sportsbike
+10134,31,100.0,4,7023.98,7/1/2003 0:00,Shipped,3,7,2003,Motorcycles,193,S10_4698,Lyon Souveniers,+33 1 46 62 7555,27 rue du Colonel Pierre Avia,,Paris,,75508,France,EMEA,Da Cunha,Daniel,Large,sportsbike
+10145,33,100.0,8,5176.38,8/25/2003 0:00,Shipped,3,8,2003,Motorcycles,193,S10_4698,Toys4GrownUps.com,6265557265,78934 Hillside Dr.,,Pasadena,CA,90003,USA,,Young,Julie,Medium,sportsbike
+10159,22,100.0,16,4132.7,10/10/2003 0:00,Shipped,4,10,2003,Motorcycles,193,S10_4698,Corporate Gift Ideas Co.,6505551386,7734 Strong St.,,San Francisco,CA,,USA,,Brown,Julie,Medium,sportsbike
+10168,20,100.0,3,4183.0,10/28/2003 0:00,Shipped,4,10,2003,Motorcycles,193,S10_4698,Technics Stores Inc.,6505556809,9408 Furth Circle,,Burlingame,CA,94217,USA,,Hirano,Juri,Medium,sportsbike
+10180,41,100.0,11,8892.9,11/11/2003 0:00,Shipped,4,11,2003,Motorcycles,193,S10_4698,Daedalus Designs Imports,20.16.1555,"184, chausse de Tournai",,Lille,,59000,France,EMEA,Rance,Martine,Large,sportsbike
+10188,45,100.0,3,8714.7,11/18/2003 0:00,Shipped,4,11,2003,Motorcycles,193,S10_4698,Herkku Gifts,+47 2267 3215,"Drammen 121, PR 744 Sentrum",,Bergen,,N 5804,Norway,EMEA,Oeztan,Veysel,Large,sportsbike
+10201,49,100.0,4,8065.89,12/1/2003 0:00,Shipped,4,12,2003,Motorcycles,193,S10_4698,Mini Wheels Co.,6505555787,5557 North Pendale Street,,San Francisco,CA,,USA,,Murphy,Julie,Large,sportsbike
+10210,34,100.0,1,6123.4,1/12/2004 0:00,Shipped,1,1,2004,Motorcycles,193,S10_4698,Osaka Souveniers Co.,+81 06 6342 5555,"Dojima Avanza 4F, 1-6-20 Dojima, Kita-ku",,Osaka,Osaka,530-0003,Japan,Japan,Kentary,Mory,Medium,sportsbike
+10223,49,100.0,3,9774.03,2/20/2004 0:00,Shipped,1,2,2004,Motorcycles,193,S10_4698,"Australian Collectors, Co.",03 9520 4555,636 St Kilda Road,Level 3,Melbourne,Victoria,3004,Australia,APAC,Ferguson,Peter,Large,sportsbike
+10237,39,100.0,9,7023.9,4/5/2004 0:00,Shipped,2,4,2004,Motorcycles,193,S10_4698,Vitachrome Inc.,2125551500,2678 Kingston Rd.,Suite 101,NYC,NY,10022,USA,,Frick,Michael,Large,sportsbike
+10251,43,100.0,4,7078.23,5/18/2004 0:00,Shipped,2,5,2004,Motorcycles,193,S10_4698,Tekni Collectables Inc.,2015559350,7476 Moss Rd.,,Newark,NJ,94019,USA,,Brown,William,Large,sportsbike
+10263,41,100.0,4,8336.94,6/28/2004 0:00,Shipped,2,6,2004,Motorcycles,193,S10_4698,Gift Depot Inc.,2035552570,25593 South Bay Ln.,,Bridgewater,CT,97562,USA,,King,Julie,Large,sportsbike
+10275,36,100.0,3,6901.92,7/23/2004 0:00,Shipped,3,7,2004,Motorcycles,193,S10_4698,La Rochelle Gifts,40.67.8555,"67, rue des Cinquante Otages",,Nantes,,44000,France,EMEA,Labrune,Janine,Medium,sportsbike
+10285,27,100.0,8,5438.07,8/27/2004 0:00,Shipped,3,8,2004,Motorcycles,193,S10_4698,Marta's Replicas Co.,6175558555,39323 Spinnaker Dr.,,Cambridge,MA,51247,USA,,Hernandez,Marta,Medium,sportsbike
+10299,29,100.0,11,6683.34,9/30/2004 0:00,Shipped,3,9,2004,Motorcycles,193,S10_4698,"Toys of Finland, Co.",90-224 8555,Keskuskatu 45,,Helsinki,,21240,Finland,EMEA,Karttunen,Matti,Medium,sportsbike
+10308,20,100.0,1,4570.4,10/15/2004 0:00,Shipped,4,10,2004,Motorcycles,193,S10_4698,Mini Classics,9145554562,3758 North Pendale Street,,White Plains,NY,24067,USA,,Frick,Steve,Medium,sportsbike
+10318,37,100.0,3,7667.14,11/2/2004 0:00,Shipped,4,11,2004,Motorcycles,193,S10_4698,Diecast Classics Inc.,2155551555,7586 Pompton St.,,Allentown,PA,70267,USA,,Yu,Kyung,Large,sportsbike
+10329,26,100.0,3,5868.2,11/15/2004 0:00,Shipped,4,11,2004,Motorcycles,193,S10_4698,Land of Toys Inc.,2125557818,897 Long Airport Avenue,,NYC,NY,10022,USA,,Yu,Kwai,Medium,sportsbike
+10339,39,76.67,3,2990.13,11/23/2004 0:00,Shipped,4,11,2004,Motorcycles,193,S10_4698,"Tokyo Collectables, Ltd",+81 3 3584 0555,2-2-8 Roppongi,,Minato-ku,Tokyo,106-0032,Japan,Japan,Shimamura,Akiko,Small,sportsbike
+10362,22,100.0,4,3664.1,1/5/2005 0:00,Shipped,1,1,2005,Motorcycles,193,S10_4698,Technics Stores Inc.,6505556809,9408 Furth Circle,,Burlingame,CA,94217,USA,,Hirano,Juri,Medium,sportsbike
+10374,22,100.0,1,3834.38,2/2/2005 0:00,Shipped,1,2,2005,Motorcycles,193,S10_4698,"Australian Gift Network, Co",61-7-3844-6555,31 Duncan St. West End,,South Brisbane,Queensland,4101,Australia,APAC,Calaghan,Tony,Medium,sportsbike
+10388,21,86.77,7,1822.17,3/3/2005 0:00,Shipped,1,3,2005,Motorcycles,193,S10_4698,FunGiftIdeas.com,5085552555,1785 First Street,,New Bedford,MA,50553,USA,,Benitez,Violeta,Small,sportsbike
+10403,66,100.0,9,11886.6,4/8/2005 0:00,Shipped,2,4,2005,Motorcycles,193,S10_4698,"UK Collectables, Ltd.",(171) 555-2282,Berkeley Gardens 12  Brewery,,Liverpool,,WX1 6LT,UK,EMEA,Devon,Elizabeth,Large,sportsbike
+10417,56,100.0,4,9218.16,5/13/2005 0:00,Disputed,2,5,2005,Motorcycles,193,S10_4698,Euro Shopping Channel,(91) 555 94 44,"C/ Moralzarzal, 86",,Madrid,,28034,Spain,EMEA,Freyre,Diego,Large,sportsbike
+10107,21,100.0,1,3036.6,2/24/2003 0:00,Shipped,1,2,2003,Motorcycles,150,S12_2823,Land of Toys Inc.,2125557818,897 Long Airport Avenue,,NYC,NY,10022,USA,,Yu,Kwai,Medium,sportsbike
+10121,50,100.0,4,8284.0,5/7/2003 0:00,Shipped,2,5,2003,Motorcycles,150,S12_2823,Reims Collectables,26.47.1555,59 rue de l'Abbaye,,Reims,,51100,France,EMEA,Henriot,Paul,Large,sportsbike
+10134,20,100.0,1,2711.2,7/1/2003 0:00,Shipped,3,7,2003,Motorcycles,150,S12_2823,Lyon Souveniers,+33 1 46 62 7555,27 rue du Colonel Pierre Avia,,Paris,,75508,France,EMEA,Da Cunha,Daniel,Small,sportsbike
+10145,49,100.0,5,8339.8,8/25/2003 0:00,Shipped,3,8,2003,Motorcycles,150,S12_2823,Toys4GrownUps.com,6265557265,78934 Hillside Dr.,,Pasadena,CA,90003,USA,,Young,Julie,Large,sportsbike
+10159,38,100.0,13,6238.84,10/10/2003 0:00,Shipped,4,10,2003,Motorcycles,150,S12_2823,Corporate Gift Ideas Co.,6505551386,7734 Strong St.,,San Francisco,CA,,USA,,Brown,Julie,Medium,sportsbike
+10169,35,100.0,13,4639.25,11/4/2003 0:00,Shipped,4,11,2003,Motorcycles,150,S12_2823,"Anna's Decorations, Ltd",02 9936 8555,201 Miller Street,Level 15,North Sydney,NSW,2060,Australia,APAC,O'Hara,Anna,Medium,sportsbike
+10180,40,100.0,8,6747.6,11/11/2003 0:00,Shipped,4,11,2003,Motorcycles,150,S12_2823,Daedalus Designs Imports,20.16.1555,"184, chausse de Tournai",,Lille,,59000,France,EMEA,Rance,Martine,Medium,sportsbike
+10189,28,100.0,1,4512.48,11/18/2003 0:00,Shipped,4,11,2003,Motorcycles,150,S12_2823,Toys4GrownUps.com,6265557265,78934 Hillside Dr.,,Pasadena,CA,90003,USA,,Young,Julie,Medium,sportsbike
+10201,25,100.0,1,4029.0,12/1/2003 0:00,Shipped,4,12,2003,Motorcycles,150,S12_2823,Mini Wheels Co.,6505555787,5557 North Pendale Street,,San Francisco,CA,,USA,,Murphy,Julie,Medium,sportsbike
+10211,36,100.0,13,4771.8,1/15/2004 0:00,Shipped,1,1,2004,Motorcycles,150,S12_2823,Auto Canal Petit,(1) 47.55.6555,"25, rue Lauriston",,Paris,,75016,France,EMEA,Perrier,Dominique,Medium,sportsbike
+10224,43,100.0,6,6087.94,2/21/2004 0:00,Shipped,1,2,2004,Motorcycles,150,S12_2823,Daedalus Designs Imports,20.16.1555,"184, chausse de Tournai",,Lille,,59000,France,EMEA,Rance,Martine,Medium,sportsbike
+10237,32,100.0,6,4193.28,4/5/2004 0:00,Shipped,2,4,2004,Motorcycles,150,S12_2823,Vitachrome Inc.,2125551500,2678 Kingston Rd.,Suite 101,NYC,NY,10022,USA,,Frick,Michael,Medium,sportsbike
+10251,46,100.0,1,7552.28,5/18/2004 0:00,Shipped,2,5,2004,Motorcycles,150,S12_2823,Tekni Collectables Inc.,2015559350,7476 Moss Rd.,,Newark,NJ,94019,USA,,Brown,William,Large,sportsbike
+10263,48,100.0,1,6434.4,6/28/2004 0:00,Shipped,2,6,2004,Motorcycles,150,S12_2823,Gift Depot Inc.,2035552570,25593 South Bay Ln.,,Bridgewater,CT,97562,USA,,King,Julie,Medium,sportsbike
+10276,43,100.0,14,5181.5,8/2/2004 0:00,Shipped,3,8,2004,Motorcycles,150,S12_2823,Online Mini Collectables,6175557555,7635 Spinnaker Dr.,,Brickhaven,MA,58339,USA,,Barajas,Miguel,Medium,sportsbike
+10285,49,100.0,5,6863.92,8/27/2004 0:00,Shipped,3,8,2004,Motorcycles,150,S12_2823,Marta's Replicas Co.,6175558555,39323 Spinnaker Dr.,,Cambridge,MA,51247,USA,,Hernandez,Marta,Medium,sportsbike
+10299,24,100.0,8,4157.04,9/30/2004 0:00,Shipped,3,9,2004,Motorcycles,150,S12_2823,"Toys of Finland, Co.",90-224 8555,Keskuskatu 45,,Helsinki,,21240,Finland,EMEA,Karttunen,Matti,Medium,sportsbike
+10309,26,100.0,4,4660.24,10/15/2004 0:00,Shipped,4,10,2004,Motorcycles,150,S12_2823,Baane Mini Imports,07-98 9555,Erling Skakkes gate 78,,Stavern,,4110,Norway,EMEA,Bergulfsen,Jonas,Medium,sportsbike
+10319,30,100.0,9,4111.8,11/3/2004 0:00,Shipped,4,11,2004,Motorcycles,150,S12_2823,Microscale Inc.,2125551957,5290 North Pendale Street,Suite 200,NYC,NY,10022,USA,,Kuo,Kee,Medium,sportsbike
+10329,24,100.0,6,3542.64,11/15/2004 0:00,Shipped,4,11,2004,Motorcycles,150,S12_2823,Land of Toys Inc.,2125557818,897 Long Airport Avenue,,NYC,NY,10022,USA,,Yu,Kwai,Medium,sportsbike
+10341,55,100.0,8,8118.55,11/24/2004 0:00,Shipped,4,11,2004,Motorcycles,150,S12_2823,Salzburg Collectables,6562-9555,Geislweg 14,,Salzburg,,5020,Austria,EMEA,Pipps,Georg,Large,sportsbike
+10362,22,100.0,1,3877.06,1/5/2005 0:00,Shipped,1,1,2005,Motorcycles,150,S12_2823,Technics Stores Inc.,6505556809,9408 Furth Circle,,Burlingame,CA,94217,USA,,Hirano,Juri,Medium,sportsbike
+10375,49,78.92,13,3867.08,2/3/2005 0:00,Shipped,1,2,2005,Motorcycles,150,S12_2823,La Rochelle Gifts,40.67.8555,"67, rue des Cinquante Otages",,Nantes,,44000,France,EMEA,Labrune,Janine,Medium,ATV
+10388,44,100.0,6,5951.44,3/3/2005 0:00,Shipped,1,3,2005,Motorcycles,150,S12_2823,FunGiftIdeas.com,5085552555,1785 First Street,,New Bedford,MA,50553,USA,,Benitez,Violeta,Medium,ATV
+10403,66,100.0,6,8648.64,4/8/2005 0:00,Shipped,2,4,2005,Motorcycles,150,S12_2823,"UK Collectables, Ltd.",(171) 555-2282,Berkeley Gardens 12  Brewery,,Liverpool,,WX1 6LT,UK,EMEA,Devon,Elizabeth,Large,ATV
+10417,21,100.0,1,3447.78,5/13/2005 0:00,Disputed,2,5,2005,Motorcycles,150,S12_2823,Euro Shopping Channel,(91) 555 94 44,"C/ Moralzarzal, 86",,Madrid,,28034,Spain,EMEA,Freyre,Diego,Medium,ATV
+10107,29,70.87,6,2055.23,2/24/2003 0:00,Shipped,1,2,2003,Motorcycles,60,S18_2625,Land of Toys Inc.,2125557818,897 Long Airport Avenue,,NYC,NY,10022,USA,,Yu,Kwai,Small,ATV
+10120,46,58.15,4,2674.9,4/29/2003 0:00,Shipped,2,4,2003,Motorcycles,60,S18_2625,"Australian Collectors, Co.",03 9520 4555,636 St Kilda Road,Level 3,Melbourne,Victoria,3004,Australia,APAC,Ferguson,Peter,Small,ATV
+10134,30,61.78,6,1853.4,7/1/2003 0:00,Shipped,3,7,2003,Motorcycles,60,S18_2625,Lyon Souveniers,+33 1 46 62 7555,27 rue du Colonel Pierre Avia,,Paris,,75508,France,EMEA,Da Cunha,Daniel,Small,ATV
+10145,30,49.67,10,1490.1,8/25/2003 0:00,Shipped,3,8,2003,Motorcycles,60,S18_2625,Toys4GrownUps.com,6265557265,78934 Hillside Dr.,,Pasadena,CA,90003,USA,,Young,Julie,Small,ATV
+10159,42,51.48,18,2162.16,10/10/2003 0:00,Shipped,4,10,2003,Motorcycles,60,S18_2625,Corporate Gift Ideas Co.,6505551386,7734 Strong St.,,San Francisco,CA,,USA,,Brown,Julie,Small,ATV
+10168,46,61.18,5,2814.28,10/28/2003 0:00,Shipped,4,10,2003,Motorcycles,60,S18_2625,Technics Stores Inc.,6505556809,9408 Furth Circle,,Burlingame,CA,94217,USA,,Hirano,Juri,Small,ATV
+10180,25,64.2,13,1605.0,11/11/2003 0:00,Shipped,4,11,2003,Motorcycles,60,S18_2625,Daedalus Designs Imports,20.16.1555,"184, chausse de Tournai",,Lille,,59000,France,EMEA,Rance,Martine,Small,ATV
+10188,32,65.42,5,2093.44,11/18/2003 0:00,Shipped,4,11,2003,Motorcycles,60,S18_2625,Herkku Gifts,+47 2267 3215,"Drammen 121, PR 744 Sentrum",,Bergen,,N 5804,Norway,EMEA,Oeztan,Veysel,Small,ATV
+10201,30,64.81,6,1944.3,12/1/2003 0:00,Shipped,4,12,2003,Motorcycles,60,S18_2625,Mini Wheels Co.,6505555787,5557 North Pendale Street,,San Francisco,CA,,USA,,Murphy,Julie,Small,ATV
+10210,40,49.67,3,1986.8,1/12/2004 0:00,Shipped,1,1,2004,Motorcycles,60,S18_2625,Osaka Souveniers Co.,+81 06 6342 5555,"Dojima Avanza 4F, 1-6-20 Dojima, Kita-ku",,Osaka,Osaka,530-0003,Japan,Japan,Kentary,Mory,Small,ATV
+10223,28,60.57,5,1695.96,2/20/2004 0:00,Shipped,1,2,2004,Motorcycles,60,S18_2625,"Australian Collectors, Co.",03 9520 4555,636 St Kilda Road,Level 3,Melbourne,Victoria,3004,Australia,APAC,Ferguson,Peter,Small,ATV
+10236,23,55.72,2,1281.56,4/3/2004 0:00,Shipped,2,4,2004,Motorcycles,60,S18_2625,Motor Mint Distributors Inc.,2155559857,11328 Douglas Av.,,Philadelphia,PA,71270,USA,,Hernandez,Rosa,Small,ATV
+10251,29,61.18,6,1774.22,5/18/2004 0:00,Shipped,2,5,2004,Motorcycles,60,S18_2625,Tekni Collectables Inc.,2015559350,7476 Moss Rd.,,Newark,NJ,94019,USA,,Brown,William,Small,ATV
+10263,34,58.75,6,1997.5,6/28/2004 0:00,Shipped,2,6,2004,Motorcycles,60,S18_2625,Gift Depot Inc.,2035552570,25593 South Bay Ln.,,Bridgewater,CT,97562,USA,,King,Julie,Small,ATV
+10275,37,63.6,5,2353.2,7/23/2004 0:00,Shipped,3,7,2004,Motorcycles,60,S18_2625,La Rochelle Gifts,40.67.8555,"67, rue des Cinquante Otages",,Nantes,,44000,France,EMEA,Labrune,Janine,Small,ATV
+10285,20,49.06,10,981.2,8/27/2004 0:00,Shipped,3,8,2004,Motorcycles,60,S18_2625,Marta's Replicas Co.,6175558555,39323 Spinnaker Dr.,,Cambridge,MA,51247,USA,,Hernandez,Marta,Small,ATV
+10298,32,48.46,2,1550.72,9/27/2004 0:00,Shipped,3,9,2004,Motorcycles,60,S18_2625,Atelier graphique,40.32.2555,"54, rue Royale",,Nantes,,44000,France,EMEA,Schmitt,Carine,Small,ATV
+10308,34,52.09,3,1771.06,10/15/2004 0:00,Shipped,4,10,2004,Motorcycles,60,S18_2625,Mini Classics,9145554562,3758 North Pendale Street,,White Plains,NY,24067,USA,,Frick,Steve,Small,ATV
+10318,42,52.7,5,2213.4,11/2/2004 0:00,Shipped,4,11,2004,Motorcycles,60,S18_2625,Diecast Classics Inc.,2155551555,7586 Pompton St.,,Allentown,PA,70267,USA,,Yu,Kyung,Small,ATV
+10329,38,100.0,12,5266.04,11/15/2004 0:00,Shipped,4,11,2004,Motorcycles,60,S18_2625,Land of Toys Inc.,2125557818,897 Long Airport Avenue,,NYC,NY,10022,USA,,Yu,Kwai,Medium,ATV
+10339,30,62.16,1,1864.8,11/23/2004 0:00,Shipped,4,11,2004,Motorcycles,60,S18_2625,"Tokyo Collectables, Ltd",+81 3 3584 0555,2-2-8 Roppongi,,Minato-ku,Tokyo,106-0032,Japan,Japan,Shimamura,Akiko,Small,ATV
+10362,23,49.67,3,1142.41,1/5/2005 0:00,Shipped,1,1,2005,Motorcycles,60,S18_2625,Technics Stores Inc.,6505556809,9408 Furth Circle,,Burlingame,CA,94217,USA,,Hirano,Juri,Small,ATV
+10374,22,53.3,4,1172.6,2/2/2005 0:00,Shipped,1,2,2005,Motorcycles,60,S18_2625,"Australian Gift Network, Co",61-7-3844-6555,31 Duncan St. West End,,South Brisbane,Queensland,4101,Australia,APAC,Calaghan,Tony,Small,ATV
+10389,39,100.0,5,6981.0,3/3/2005 0:00,Shipped,1,3,2005,Motorcycles,60,S18_2625,Scandinavian Gift Ideas,0695-34 6555,?kergatan 24,,Boras,,S-844 67,Sweden,EMEA,Larsson,Maria,Medium,ATV
+10402,55,55.72,2,3064.6,4/7/2005 0:00,Shipped,2,4,2005,Motorcycles,60,S18_2625,Auto Canal Petit,(1) 47.55.6555,"25, rue Lauriston",,Paris,,75016,France,EMEA,Perrier,Dominique,Medium,ATV
+10417,36,61.18,6,2202.48,5/13/2005 0:00,Disputed,2,5,2005,Motorcycles,60,S18_2625,Euro Shopping Channel,(91) 555 94 44,"C/ Moralzarzal, 86",,Madrid,,28034,Spain,EMEA,Freyre,Diego,Small,ATV
+10108,43,67.77,12,2914.11,3/3/2003 0:00,Shipped,1,3,2003,Motorcycles,62,S18_3782,Cruz & Sons Co.,+63 2 555 3587,15 McCallum Street - NatWest Center #13-03,,Makati City,,1227 MM,Philippines,Japan,Cruz,Arnold,Small,ATV
+10122,35,49.74,16,1740.9,5/8/2003 0:00,Shipped,2,5,2003,Motorcycles,62,S18_3782,Marseille Mini Autos,91.24.4555,"12, rue des Bouchers",,Marseille,,13008,France,EMEA,Lebihan,Laurence,Small,ATV
+10135,45,50.36,13,2266.2,7/2/2003 0:00,Shipped,3,7,2003,Motorcycles,62,S18_3782,Mini Gifts Distributors Ltd.,4155551450,5677 Strong St.,,San Rafael,CA,97562,USA,,Nelson,Valarie,Small,ATV
+10146,47,67.14,2,3155.58,9/3/2003 0:00,Shipped,3,9,2003,Motorcycles,62,S18_3782,Gift Ideas Corp.,2035554407,2440 Pompton St.,,Glendale,CT,97561,USA,,Lewis,Dan,Medium,ATV
+10159,21,64.66,8,1357.86,10/10/2003 0:00,Shipped,4,10,2003,Motorcycles,62,S18_3782,Corporate Gift Ideas Co.,6505551386,7734 Strong St.,,San Francisco,CA,,USA,,Brown,Julie,Small,ATV
+10169,38,68.39,8,2598.82,11/4/2003 0:00,Shipped,4,11,2003,Motorcycles,62,S18_3782,"Anna's Decorations, Ltd",02 9936 8555,201 Miller Street,Level 15,North Sydney,NSW,2060,Australia,APAC,O'Hara,Anna,Small,ATV
+10180,21,50.36,3,1057.56,11/11/2003 0:00,Shipped,4,11,2003,Motorcycles,62,S18_3782,Daedalus Designs Imports,20.16.1555,"184, chausse de Tournai",,Lille,,59000,France,EMEA,Rance,Martine,Small,ATV
+10191,43,72.74,9,3127.82,11/20/2003 0:00,Shipped,4,11,2003,Motorcycles,62,S18_3782,"Toms Spezialitten, Ltd",0221-5554327,Mehrheimerstr. 369,,Koln,,50739,Germany,EMEA,Pfalzheim,Henriette,Medium,ATV
+10211,46,54.09,8,2488.14,1/15/2004 0:00,Shipped,1,1,2004,Motorcycles,62,S18_3782,Auto Canal Petit,(1) 47.55.6555,"25, rue Lauriston",,Paris,,75016,France,EMEA,Perrier,Dominique,Small,ATV
+10224,38,58.44,1,2220.72,2/21/2004 0:00,Shipped,1,2,2004,Motorcycles,62,S18_3782,Daedalus Designs Imports,20.16.1555,"184, chausse de Tournai",,Lille,,59000,France,EMEA,Rance,Martine,Small,ATV
+10237,26,52.22,1,1357.72,4/5/2004 0:00,Shipped,2,4,2004,Motorcycles,62,S18_3782,Vitachrome Inc.,2125551500,2678 Kingston Rd.,Suite 101,NYC,NY,10022,USA,,Frick,Michael,Small,ATV
+10252,31,52.84,5,1638.04,5/26/2004 0:00,Shipped,2,5,2004,Motorcycles,62,S18_3782,Auto Canal Petit,(1) 47.55.6555,"25, rue Lauriston",,Paris,,75016,France,EMEA,Perrier,Dominique,Small,ATV
+10264,48,54.71,3,2626.08,6/30/2004 0:00,Shipped,2,6,2004,Motorcycles,62,S18_3782,Gifts4AllAges.com,6175559555,8616 Spinnaker Dr.,,Boston,MA,51003,USA,,Yoshido,Juri,Small,ATV
+10276,33,50.36,9,1661.88,8/2/2004 0:00,Shipped,3,8,2004,Motorcycles,62,S18_3782,Online Mini Collectables,6175557555,7635 Spinnaker Dr.,,Brickhaven,MA,58339,USA,,Barajas,Miguel,Small,ATV
+10286,38,57.2,1,2173.6,8/28/2004 0:00,Shipped,3,8,2004,Motorcycles,62,S18_3782,"La Corne D'abondance, Co.",(1) 42.34.2555,"265, boulevard Charonne",,Paris,,75012,France,EMEA,Bertrand,Marie,Small,ATV
+10299,39,55.95,3,2182.05,9/30/2004 0:00,Shipped,3,9,2004,Motorcycles,62,S18_3782,"Toys of Finland, Co.",90-224 8555,Keskuskatu 45,,Helsinki,,21240,Finland,EMEA,Karttunen,Matti,Small,ATV
+10310,42,67.14,16,2819.88,10/16/2004 0:00,Shipped,4,10,2004,Motorcycles,62,S18_3782,"Toms Spezialitten, Ltd",0221-5554327,Mehrheimerstr. 369,,Koln,,50739,Germany,EMEA,Pfalzheim,Henriette,Small,ATV
+10319,44,59.06,4,2598.64,11/3/2004 0:00,Shipped,4,11,2004,Motorcycles,62,S18_3782,Microscale Inc.,2125551957,5290 North Pendale Street,Suite 200,NYC,NY,10022,USA,,Kuo,Kee,Small,ATV
+10330,29,69.63,2,2019.27,11/16/2004 0:00,Shipped,4,11,2004,Motorcycles,62,S18_3782,Cruz & Sons Co.,+63 2 555 3587,15 McCallum Street - NatWest Center #13-03,,Makati City,,1227 MM,Philippines,Japan,Cruz,Arnold,Small,ATV
+10342,26,55.95,8,1454.7,11/24/2004 0:00,Shipped,4,11,2004,Motorcycles,62,S18_3782,"Australian Collectors, Co.",03 9520 4555,636 St Kilda Road,Level 3,Melbourne,Victoria,3004,Australia,APAC,Ferguson,Peter,Small,ATV
+10355,31,53.47,1,1657.57,12/7/2004 0:00,Shipped,4,12,2004,Motorcycles,62,S18_3782,Euro Shopping Channel,(91) 555 94 44,"C/ Moralzarzal, 86",,Madrid,,28034,Spain,EMEA,Freyre,Diego,Small,commercialbike
+10363,32,89.12,12,2851.84,1/6/2005 0:00,Shipped,1,1,2005,Motorcycles,62,S18_3782,Suominen Souveniers,+358 9 8045 555,"Software Engineering Center, SEC Oy",,Espoo,,FIN-02271,Finland,EMEA,Suominen,Kalle,Small,commercialbike
+10378,28,100.0,9,4609.64,2/10/2005 0:00,Shipped,1,2,2005,Motorcycles,62,S18_3782,Euro Shopping Channel,(91) 555 94 44,"C/ Moralzarzal, 86",,Madrid,,28034,Spain,EMEA,Freyre,Diego,Medium,commercialbike
+10390,36,100.0,2,5079.96,3/4/2005 0:00,Shipped,1,3,2005,Motorcycles,62,S18_3782,Mini Gifts Distributors Ltd.,4155551450,5677 Strong St.,,San Rafael,CA,97562,USA,,Nelson,Valarie,Medium,commercialbike
+10403,36,52.22,1,1879.92,4/8/2005 0:00,Shipped,2,4,2005,Motorcycles,62,S18_3782,"UK Collectables, Ltd.",(171) 555-2282,Berkeley Gardens 12  Brewery,,Liverpool,,WX1 6LT,UK,EMEA,Devon,Elizabeth,Small,commercialbike
+10107,25,100.0,3,2845.75,2/24/2003 0:00,Shipped,1,2,2003,Motorcycles,112,S24_1578,Land of Toys Inc.,2125557818,897 Long Airport Avenue,,NYC,NY,10022,USA,,Yu,Kwai,Small,commercialbike
+10120,35,98.05,1,3431.75,4/29/2003 0:00,Shipped,2,4,2003,Motorcycles,112,S24_1578,"Australian Collectors, Co.",03 9520 4555,636 St Kilda Road,Level 3,Melbourne,Victoria,3004,Australia,APAC,Ferguson,Peter,Medium,commercialbike
+10134,35,93.54,3,3273.9,7/1/2003 0:00,Shipped,3,7,2003,Motorcycles,112,S24_1578,Lyon Souveniers,+33 1 46 62 7555,27 rue du Colonel Pierre Avia,,Paris,,75508,France,EMEA,Da Cunha,Daniel,Medium,commercialbike
+10145,43,95.8,7,4119.4,8/25/2003 0:00,Shipped,3,8,2003,Motorcycles,112,S24_1578,Toys4GrownUps.com,6265557265,78934 Hillside Dr.,,Pasadena,CA,90003,USA,,Young,Julie,Medium,commercialbike
+10159,44,100.0,15,5355.68,10/10/2003 0:00,Shipped,4,10,2003,Motorcycles,112,S24_1578,Corporate Gift Ideas Co.,6505551386,7734 Strong St.,,San Francisco,CA,,USA,,Brown,Julie,Medium,commercialbike
+10168,50,100.0,2,5747.5,10/28/2003 0:00,Shipped,4,10,2003,Motorcycles,112,S24_1578,Technics Stores Inc.,6505556809,9408 Furth Circle,,Burlingame,CA,94217,USA,,Hirano,Juri,Medium,commercialbike
+10180,48,100.0,10,5355.36,11/11/2003 0:00,Shipped,4,11,2003,Motorcycles,112,S24_1578,Daedalus Designs Imports,20.16.1555,"184, chausse de Tournai",,Lille,,59000,France,EMEA,Rance,Martine,Medium,commercialbike
+10188,25,100.0,2,2535.75,11/18/2003 0:00,Shipped,4,11,2003,Motorcycles,112,S24_1578,Herkku Gifts,+47 2267 3215,"Drammen 121, PR 744 Sentrum",,Bergen,,N 5804,Norway,EMEA,Oeztan,Veysel,Small,commercialbike
+10201,39,100.0,3,4351.23,12/1/2003 0:00,Shipped,4,12,2003,Motorcycles,112,S24_1578,Mini Wheels Co.,6505555787,5557 North Pendale Street,,San Francisco,CA,,USA,,Murphy,Julie,Medium,commercialbike
+10211,25,90.16,15,2254.0,1/15/2004 0:00,Shipped,1,1,2004,Motorcycles,112,S24_1578,Auto Canal Petit,(1) 47.55.6555,"25, rue Lauriston",,Paris,,75016,France,EMEA,Perrier,Dominique,Small,commercialbike
+10223,32,91.29,2,2921.28,2/20/2004 0:00,Shipped,1,2,2004,Motorcycles,112,S24_1578,"Australian Collectors, Co.",03 9520 4555,636 St Kilda Road,Level 3,Melbourne,Victoria,3004,Australia,APAC,Ferguson,Peter,Small,commercialbike
+10237,20,100.0,8,2299.0,4/5/2004 0:00,Shipped,2,4,2004,Motorcycles,112,S24_1578,Vitachrome Inc.,2125551500,2678 Kingston Rd.,Suite 101,NYC,NY,10022,USA,,Frick,Michael,Small,commercialbike
+10251,26,100.0,3,2637.18,5/18/2004 0:00,Shipped,2,5,2004,Motorcycles,112,S24_1578,Tekni Collectables Inc.,2015559350,7476 Moss Rd.,,Newark,NJ,94019,USA,,Brown,William,Small,commercialbike
+10263,42,100.0,3,4307.52,6/28/2004 0:00,Shipped,2,6,2004,Motorcycles,112,S24_1578,Gift Depot Inc.,2035552570,25593 South Bay Ln.,,Bridgewater,CT,97562,USA,,King,Julie,Medium,commercialbike
+10275,21,100.0,2,2153.76,7/23/2004 0:00,Shipped,3,7,2004,Motorcycles,112,S24_1578,La Rochelle Gifts,40.67.8555,"67, rue des Cinquante Otages",,Nantes,,44000,France,EMEA,Labrune,Janine,Small,commercialbike
+10285,34,100.0,7,3716.88,8/27/2004 0:00,Shipped,3,8,2004,Motorcycles,112,S24_1578,Marta's Replicas Co.,6175558555,39323 Spinnaker Dr.,,Cambridge,MA,51247,USA,,Hernandez,Marta,Medium,commercialbike
+10299,47,100.0,10,5455.76,9/30/2004 0:00,Shipped,3,9,2004,Motorcycles,112,S24_1578,"Toys of Finland, Co.",90-224 8555,Keskuskatu 45,,Helsinki,,21240,Finland,EMEA,Karttunen,Matti,Medium,commercialbike
+10309,21,100.0,6,2650.62,10/15/2004 0:00,Shipped,4,10,2004,Motorcycles,112,S24_1578,Baane Mini Imports,07-98 9555,Erling Skakkes gate 78,,Stavern,,4110,Norway,EMEA,Bergulfsen,Jonas,Small,commercialbike
+10318,48,100.0,2,6437.28,11/2/2004 0:00,Shipped,4,11,2004,Motorcycles,112,S24_1578,Diecast Classics Inc.,2155551555,7586 Pompton St.,,Allentown,PA,70267,USA,,Yu,Kyung,Medium,commercialbike
+10329,30,87.78,7,2633.4,11/15/2004 0:00,Shipped,4,11,2004,Motorcycles,112,S24_1578,Land of Toys Inc.,2125557818,897 Long Airport Avenue,,NYC,NY,10022,USA,,Yu,Kwai,Small,commercialbike
+10339,27,84.39,10,2278.53,11/23/2004 0:00,Shipped,4,11,2004,Motorcycles,112,S24_1578,"Tokyo Collectables, Ltd",+81 3 3584 0555,2-2-8 Roppongi,,Minato-ku,Tokyo,106-0032,Japan,Japan,Shimamura,Akiko,Small,commercialbike
+10362,50,96.92,2,4846.0,1/5/2005 0:00,Shipped,1,1,2005,Motorcycles,112,S24_1578,Technics Stores Inc.,6505556809,9408 Furth Circle,,Burlingame,CA,94217,USA,,Hirano,Juri,Medium,commercialbike
+10374,38,100.0,6,4197.1,2/2/2005 0:00,Shipped,1,2,2005,Motorcycles,112,S24_1578,"Australian Gift Network, Co",61-7-3844-6555,31 Duncan St. West End,,South Brisbane,Queensland,4101,Australia,APAC,Calaghan,Tony,Medium,commercialbike
+10389,45,100.0,1,4597.65,3/3/2005 0:00,Shipped,1,3,2005,Motorcycles,112,S24_1578,Scandinavian Gift Ideas,0695-34 6555,?kergatan 24,,Boras,,S-844 67,Sweden,EMEA,Larsson,Maria,Medium,commercialbike
+10403,46,100.0,8,5287.7,4/8/2005 0:00,Shipped,2,4,2005,Motorcycles,112,S24_1578,"UK Collectables, Ltd.",(171) 555-2282,Berkeley Gardens 12  Brewery,,Liverpool,,WX1 6LT,UK,EMEA,Devon,Elizabeth,Medium,commercialbike
+10417,35,100.0,3,3550.05,5/13/2005 0:00,Disputed,2,5,2005,Motorcycles,112,S24_1578,Euro Shopping Channel,(91) 555 94 44,"C/ Moralzarzal, 86",,Madrid,,28034,Spain,EMEA,Freyre,Diego,Medium,commercialbike
+10107,38,83.03,7,3155.14,2/24/2003 0:00,Shipped,1,2,2003,Motorcycles,76,S24_2000,Land of Toys Inc.,2125557818,897 Long Airport Avenue,,NYC,NY,10022,USA,,Yu,Kwai,Medium,commercialbike
+10120,34,83.79,5,2848.86,4/29/2003 0:00,Shipped,2,4,2003,Motorcycles,76,S24_2000,"Australian Collectors, Co.",03 9520 4555,636 St Kilda Road,Level 3,Melbourne,Victoria,3004,Australia,APAC,Ferguson,Peter,Small,commercialbike
+10134,43,83.03,7,3570.29,7/1/2003 0:00,Shipped,3,7,2003,Motorcycles,76,S24_2000,Lyon Souveniers,+33 1 46 62 7555,27 rue du Colonel Pierre Avia,,Paris,,75508,France,EMEA,Da Cunha,Daniel,Medium,commercialbike
+10145,47,83.03,11,3902.41,8/25/2003 0:00,Shipped,3,8,2003,Motorcycles,76,S24_2000,Toys4GrownUps.com,6265557265,78934 Hillside Dr.,,Pasadena,CA,90003,USA,,Young,Julie,Medium,commercialbike
+10158,22,67.03,1,1474.66,10/10/2003 0:00,Shipped,4,10,2003,Motorcycles,76,S24_2000,Baane Mini Imports,07-98 9555,Erling Skakkes gate 78,,Stavern,,4110,Norway,EMEA,Bergulfsen,Jonas,Small,commercialbike
+10168,29,75.41,6,2186.89,10/28/2003 0:00,Shipped,4,10,2003,Motorcycles,76,S24_2000,Technics Stores Inc.,6505556809,9408 Furth Circle,,Burlingame,CA,94217,USA,,Hirano,Juri,Small,commercialbike
+10180,28,68.55,14,1919.4,11/11/2003 0:00,Shipped,4,11,2003,Motorcycles,76,S24_2000,Daedalus Designs Imports,20.16.1555,"184, chausse de Tournai",,Lille,,59000,France,EMEA,Rance,Martine,Small,commercialbike
+10188,40,91.4,6,3656.0,11/18/2003 0:00,Shipped,4,11,2003,Motorcycles,76,S24_2000,Herkku Gifts,+47 2267 3215,"Drammen 121, PR 744 Sentrum",,Bergen,,N 5804,Norway,EMEA,Oeztan,Veysel,Medium,commercialbike
+10201,25,73.88,7,1847.0,12/1/2003 0:00,Shipped,4,12,2003,Motorcycles,76,S24_2000,Mini Wheels Co.,6505555787,5557 North Pendale Street,,San Francisco,CA,,USA,,Murphy,Julie,Small,commercialbike
+10210,30,61.7,4,1851.0,1/12/2004 0:00,Shipped,1,1,2004,Motorcycles,76,S24_2000,Osaka Souveniers Co.,+81 06 6342 5555,"Dojima Avanza 4F, 1-6-20 Dojima, Kita-ku",,Osaka,Osaka,530-0003,Japan,Japan,Kentary,Mory,Small,commercialbike
+10223,38,69.31,6,2633.78,2/20/2004 0:00,Shipped,1,2,2004,Motorcycles,76,S24_2000,"Australian Collectors, Co.",03 9520 4555,636 St Kilda Road,Level 3,Melbourne,Victoria,3004,Australia,APAC,Ferguson,Peter,Small,commercialbike
+10236,36,87.6,3,3153.6,4/3/2004 0:00,Shipped,2,4,2004,Motorcycles,76,S24_2000,Motor Mint Distributors Inc.,2155559857,11328 Douglas Av.,,Philadelphia,PA,71270,USA,,Hernandez,Rosa,Medium,commercialbike
+10250,32,87.6,1,2803.2,5/11/2004 0:00,Shipped,2,5,2004,Motorcycles,76,S24_2000,The Sharp Gifts Warehouse,4085553659,3086 Ingle Ln.,,San Jose,CA,94217,USA,,Frick,Sue,Small,commercialbike
+10263,37,62.46,7,2311.02,6/28/2004 0:00,Shipped,2,6,2004,Motorcycles,76,S24_2000,Gift Depot Inc.,2035552570,25593 South Bay Ln.,,Bridgewater,CT,97562,USA,,King,Julie,Small,commercialbike
+10275,30,79.98,6,2399.4,7/23/2004 0:00,Shipped,3,7,2004,Motorcycles,76,S24_2000,La Rochelle Gifts,40.67.8555,"67, rue des Cinquante Otages",,Nantes,,44000,France,EMEA,Labrune,Janine,Small,commercialbike
+10285,39,70.08,11,2733.12,8/27/2004 0:00,Shipped,3,8,2004,Motorcycles,76,S24_2000,Marta's Replicas Co.,6175558555,39323 Spinnaker Dr.,,Cambridge,MA,51247,USA,,Hernandez,Marta,Small,commercialbike
+10297,32,65.51,1,2096.32,9/16/2004 0:00,Shipped,3,9,2004,Motorcycles,76,S24_2000,"Clover Collections, Co.",+353 1862 1555,25 Maiden Lane,Floor No. 4,Dublin,,2,Ireland,EMEA,Cassidy,Dean,Small,commercialbike
+10308,47,63.22,4,2971.34,10/15/2004 0:00,Shipped,4,10,2004,Motorcycles,76,S24_2000,Mini Classics,9145554562,3758 North Pendale Street,,White Plains,NY,24067,USA,,Frick,Steve,Small,commercialbike
+10318,26,86.83,6,2257.58,11/2/2004 0:00,Shipped,4,11,2004,Motorcycles,76,S24_2000,Diecast Classics Inc.,2155551555,7586 Pompton St.,,Allentown,PA,70267,USA,,Yu,Kyung,Small,commercialbike
+10329,37,94.43,4,3493.91,11/15/2004 0:00,Shipped,4,11,2004,Motorcycles,76,S24_2000,Land of Toys Inc.,2125557818,897 Long Airport Avenue,,NYC,NY,10022,USA,,Yu,Kwai,Medium,commercialbike
+10340,55,79.98,8,4398.9,11/24/2004 0:00,Shipped,4,11,2004,Motorcycles,76,S24_2000,Enaco Distributors,(93) 203 4555,"Rambla de Catalu¤a, 23",,Barcelona,,8022,Spain,EMEA,Saavedra,Eduardo,Medium,commercialbike
+10363,21,100.0,8,3595.62,1/6/2005 0:00,Shipped,1,1,2005,Motorcycles,76,S24_2000,Suominen Souveniers,+358 9 8045 555,"Software Engineering Center, SEC Oy",,Espoo,,FIN-02271,Finland,EMEA,Suominen,Kalle,Medium,commercialbike
+10375,23,100.0,9,2443.29,2/3/2005 0:00,Shipped,1,2,2005,Motorcycles,76,S24_2000,La Rochelle Gifts,40.67.8555,"67, rue des Cinquante Otages",,Nantes,,44000,France,EMEA,Labrune,Janine,Small,commercialbike
+10389,49,81.4,2,3988.6,3/3/2005 0:00,Shipped,1,3,2005,Motorcycles,76,S24_2000,Scandinavian Gift Ideas,0695-34 6555,?kergatan 24,,Boras,,S-844 67,Sweden,EMEA,Larsson,Maria,Medium,commercialbike
+10402,59,87.6,3,5168.4,4/7/2005 0:00,Shipped,2,4,2005,Motorcycles,76,S24_2000,Auto Canal Petit,(1) 47.55.6555,"25, rue Lauriston",,Paris,,75016,France,EMEA,Perrier,Dominique,Medium,commercialbike
+10416,32,87.6,1,2803.2,5/10/2005 0:00,Shipped,2,5,2005,Motorcycles,76,S24_2000,L'ordine Souveniers,0522-556555,Strada Provinciale 124,,Reggio Emilia,,42100,Italy,EMEA,Moroni,Maurizio,Small,commercialbike
+10108,35,58.87,15,2060.45,3/3/2003 0:00,Shipped,1,3,2003,Motorcycles,69,S24_2360,Cruz & Sons Co.,+63 2 555 3587,15 McCallum Street - NatWest Center #13-03,,Makati City,,1227 MM,Philippines,Japan,Cruz,Arnold,Small,commercialbike
+10121,32,76.88,2,2460.16,5/7/2003 0:00,Shipped,2,5,2003,Motorcycles,69,S24_2360,Reims Collectables,26.47.1555,59 rue de l'Abbaye,,Reims,,51100,France,EMEA,Henriot,Paul,Small,commercialbike
+10135,29,61.64,16,1787.56,7/2/2003 0:00,Shipped,3,7,2003,Motorcycles,69,S24_2360,Mini Gifts Distributors Ltd.,4155551450,5677 Strong St.,,San Rafael,CA,97562,USA,,Nelson,Valarie,Small,commercialbike
+10145,27,60.95,3,1645.65,8/25/2003 0:00,Shipped,3,8,2003,Motorcycles,69,S24_2360,Toys4GrownUps.com,6265557265,78934 Hillside Dr.,,Pasadena,CA,90003,USA,,Young,Julie,Small,commercialbike
+10159,27,80.34,11,2169.18,10/10/2003 0:00,Shipped,4,10,2003,Motorcycles,69,S24_2360,Corporate Gift Ideas Co.,6505551386,7734 Strong St.,,San Francisco,CA,,USA,,Brown,Julie,Small,commercialbike
+10169,38,74.11,11,2816.18,11/4/2003 0:00,Shipped,4,11,2003,Motorcycles,69,S24_2360,"Anna's Decorations, Ltd",02 9936 8555,201 Miller Street,Level 15,North Sydney,NSW,2060,Australia,APAC,O'Hara,Anna,Small,commercialbike
+10180,35,72.03,6,2521.05,11/11/2003 0:00,Shipped,4,11,2003,Motorcycles,69,S24_2360,Daedalus Designs Imports,20.16.1555,"184, chausse de Tournai",,Lille,,59000,France,EMEA,Rance,Martine,Small,commercialbike
+10190,42,76.19,3,3199.98,11/19/2003 0:00,Shipped,4,11,2003,Motorcycles,69,S24_2360,Euro Shopping Channel,(91) 555 94 44,"C/ Moralzarzal, 86",,Madrid,,28034,Spain,EMEA,Freyre,Diego,Medium,commercialbike
+10211,21,63.72,11,1338.12,1/15/2004 0:00,Shipped,1,1,2004,Motorcycles,69,S24_2360,Auto Canal Petit,(1) 47.55.6555,"25, rue Lauriston",,Paris,,75016,France,EMEA,Perrier,Dominique,Small,commercialbike
+10224,37,80.34,4,2972.58,2/21/2004 0:00,Shipped,1,2,2004,Motorcycles,69,S24_2360,Daedalus Designs Imports,20.16.1555,"184, chausse de Tournai",,Lille,,59000,France,EMEA,Rance,Martine,Small,commercialbike
+10237,26,79.65,4,2070.9,4/5/2004 0:00,Shipped,2,4,2004,Motorcycles,69,S24_2360,Vitachrome Inc.,2125551500,2678 Kingston Rd.,Suite 101,NYC,NY,10022,USA,,Frick,Michael,Small,commercialbike
+10252,47,65.8,8,3092.6,5/26/2004 0:00,Shipped,2,5,2004,Motorcycles,69,S24_2360,Auto Canal Petit,(1) 47.55.6555,"25, rue Lauriston",,Paris,,75016,France,EMEA,Perrier,Dominique,Medium,commercialbike
+10264,37,65.1,6,2408.7,6/30/2004 0:00,Shipped,2,6,2004,Motorcycles,69,S24_2360,Gifts4AllAges.com,6175559555,8616 Spinnaker Dr.,,Boston,MA,51003,USA,,Yoshido,Juri,Small,commercialbike
+10276,46,75.49,12,3472.54,8/2/2004 0:00,Shipped,3,8,2004,Motorcycles,69,S24_2360,Online Mini Collectables,6175557555,7635 Spinnaker Dr.,,Brickhaven,MA,58339,USA,,Barajas,Miguel,Medium,commercialbike
+10285,38,59.56,3,2263.28,8/27/2004 0:00,Shipped,3,8,2004,Motorcycles,69,S24_2360,Marta's Replicas Co.,6175558555,39323 Spinnaker Dr.,,Cambridge,MA,51247,USA,,Hernandez,Marta,Small,commercialbike
+10299,33,66.49,6,2194.17,9/30/2004 0:00,Shipped,3,9,2004,Motorcycles,69,S24_2360,"Toys of Finland, Co.",90-224 8555,Keskuskatu 45,,Helsinki,,21240,Finland,EMEA,Karttunen,Matti,Small,commercialbike
+10309,24,56.1,2,1346.4,10/15/2004 0:00,Shipped,4,10,2004,Motorcycles,69,S24_2360,Baane Mini Imports,07-98 9555,Erling Skakkes gate 78,,Stavern,,4110,Norway,EMEA,Bergulfsen,Jonas,Small,commercialbike
+10319,31,81.73,7,2533.63,11/3/2004 0:00,Shipped,4,11,2004,Motorcycles,69,S24_2360,Microscale Inc.,2125551957,5290 North Pendale Street,Suite 200,NYC,NY,10022,USA,,Kuo,Kee,Small,commercialbike
+10330,42,81.03,1,3403.26,11/16/2004 0:00,Shipped,4,11,2004,Motorcycles,69,S24_2360,Cruz & Sons Co.,+63 2 555 3587,15 McCallum Street - NatWest Center #13-03,,Makati City,,1227 MM,Philippines,Japan,Cruz,Arnold,Medium,commercialbike
+10341,32,100.0,6,3307.2,11/24/2004 0:00,Shipped,4,11,2004,Motorcycles,69,S24_2360,Salzburg Collectables,6562-9555,Geislweg 14,,Salzburg,,5020,Austria,EMEA,Pipps,Georg,Medium,commercialbike
+10355,41,70.65,3,2896.65,12/7/2004 0:00,Shipped,4,12,2004,Motorcycles,69,S24_2360,Euro Shopping Channel,(91) 555 94 44,"C/ Moralzarzal, 86",,Madrid,,28034,Spain,EMEA,Freyre,Diego,Small,commercialbike
+10363,43,61.23,14,2632.89,1/6/2005 0:00,Shipped,1,1,2005,Motorcycles,69,S24_2360,Suominen Souveniers,+358 9 8045 555,"Software Engineering Center, SEC Oy",,Espoo,,FIN-02271,Finland,EMEA,Suominen,Kalle,Small,commercialbike
+10375,20,100.0,14,2046.0,2/3/2005 0:00,Shipped,1,2,2005,Motorcycles,69,S24_2360,La Rochelle Gifts,40.67.8555,"67, rue des Cinquante Otages",,Nantes,,44000,France,EMEA,Labrune,Janine,Small,commercialbike
+10390,35,65.13,4,2279.55,3/4/2005 0:00,Shipped,1,3,2005,Motorcycles,69,S24_2360,Mini Gifts Distributors Ltd.,4155551450,5677 Strong St.,,San Rafael,CA,97562,USA,,Nelson,Valarie,Small,commercialbike
+10403,27,79.65,4,2150.55,4/8/2005 0:00,Shipped,2,4,2005,Motorcycles,69,S24_2360,"UK Collectables, Ltd.",(171) 555-2282,Berkeley Gardens 12  Brewery,,Liverpool,,WX1 6LT,UK,EMEA,Devon,Elizabeth,Small,commercialbike
+10107,20,92.9,8,1858.0,2/24/2003 0:00,Shipped,1,2,2003,Motorcycles,99,S32_1374,Land of Toys Inc.,2125557818,897 Long Airport Avenue,,NYC,NY,10022,USA,,Yu,Kwai,Small,commercialbike
+10120,22,100.0,6,2461.36,4/29/2003 0:00,Shipped,2,4,2003,Motorcycles,99,S32_1374,"Australian Collectors, Co.",03 9520 4555,636 St Kilda Road,Level 3,Melbourne,Victoria,3004,Australia,APAC,Ferguson,Peter,Small,commercialbike
+10133,23,100.0,1,2642.01,6/27/2003 0:00,Shipped,2,6,2003,Motorcycles,99,S32_1374,Euro Shopping Channel,(91) 555 94 44,"C/ Moralzarzal, 86",,Madrid,,28034,Spain,EMEA,Freyre,Diego,Small,commercialbike
+10145,33,93.9,12,3098.7,8/25/2003 0:00,Shipped,3,8,2003,Motorcycles,99,S32_1374,Toys4GrownUps.com,6265557265,78934 Hillside Dr.,,Pasadena,CA,90003,USA,,Young,Julie,Medium,commercialbike
+10168,28,100.0,7,3244.36,10/28/2003 0:00,Shipped,4,10,2003,Motorcycles,99,S32_1374,Technics Stores Inc.,6505556809,9408 Furth Circle,,Burlingame,CA,94217,USA,,Hirano,Juri,Medium,commercialbike
+10188,44,98.89,7,4351.16,11/18/2003 0:00,Shipped,4,11,2003,Motorcycles,99,S32_1374,Herkku Gifts,+47 2267 3215,"Drammen 121, PR 744 Sentrum",,Bergen,,N 5804,Norway,EMEA,Oeztan,Veysel,Medium,commercialbike
+10210,46,79.91,5,3675.86,1/12/2004 0:00,Shipped,1,1,2004,Motorcycles,99,S32_1374,Osaka Souveniers Co.,+81 06 6342 5555,"Dojima Avanza 4F, 1-6-20 Dojima, Kita-ku",,Osaka,Osaka,530-0003,Japan,Japan,Kentary,Mory,Medium,commercialbike
+10223,21,100.0,7,2475.27,2/20/2004 0:00,Shipped,1,2,2004,Motorcycles,99,S32_1374,"Australian Collectors, Co.",03 9520 4555,636 St Kilda Road,Level 3,Melbourne,Victoria,3004,Australia,APAC,Ferguson,Peter,Small,commercialbike
+10235,41,100.0,1,4177.49,4/2/2004 0:00,Shipped,2,4,2004,Motorcycles,99,S32_1374,"Royal Canadian Collectables, Ltd.",(604) 555-4555,23 Tsawassen Blvd.,,Tsawassen,BC,T2F 8M4,Canada,,Lincoln,Elizabeth,Medium,commercialbike
+10250,31,100.0,2,3282.28,5/11/2004 0:00,Shipped,2,5,2004,Motorcycles,99,S32_1374,The Sharp Gifts Warehouse,4085553659,3086 Ingle Ln.,,San Jose,CA,94217,USA,,Frick,Sue,Medium,commercialbike
+10263,31,79.91,8,2477.21,6/28/2004 0:00,Shipped,2,6,2004,Motorcycles,99,S32_1374,Gift Depot Inc.,2035552570,25593 South Bay Ln.,,Bridgewater,CT,97562,USA,,King,Julie,Small,commercialbike
+10275,23,81.91,7,1883.93,7/23/2004 0:00,Shipped,3,7,2004,Motorcycles,99,S32_1374,La Rochelle Gifts,40.67.8555,"67, rue des Cinquante Otages",,Nantes,,44000,France,EMEA,Labrune,Janine,Small,commercialbike
+10285,37,98.89,12,3658.93,8/27/2004 0:00,Shipped,3,8,2004,Motorcycles,99,S32_1374,Marta's Replicas Co.,6175558555,39323 Spinnaker Dr.,,Cambridge,MA,51247,USA,,Hernandez,Marta,Medium,commercialbike
+10297,26,100.0,2,2856.88,9/16/2004 0:00,Shipped,3,9,2004,Motorcycles,99,S32_1374,"Clover Collections, Co.",+353 1862 1555,25 Maiden Lane,Floor No. 4,Dublin,,2,Ireland,EMEA,Cassidy,Dean,Small,commercialbike
+10308,24,79.91,5,1917.84,10/15/2004 0:00,Shipped,4,10,2004,Motorcycles,99,S32_1374,Mini Classics,9145554562,3758 North Pendale Street,,White Plains,NY,24067,USA,,Frick,Steve,Small,commercialbike
+10318,47,100.0,7,5305.36,11/2/2004 0:00,Shipped,4,11,2004,Motorcycles,99,S32_1374,Diecast Classics Inc.,2155551555,7586 Pompton St.,,Allentown,PA,70267,USA,,Yu,Kyung,Medium,commercialbike
+10329,45,63.91,11,2875.95,11/15/2004 0:00,Shipped,4,11,2004,Motorcycles,99,S32_1374,Land of Toys Inc.,2125557818,897 Long Airport Avenue,,NYC,NY,10022,USA,,Yu,Kwai,Small,commercialbike
+10340,55,100.0,2,6482.85,11/24/2004 0:00,Shipped,4,11,2004,Motorcycles,99,S32_1374,Enaco Distributors,(93) 203 4555,"Rambla de Catalu¤a, 23",,Barcelona,,8022,Spain,EMEA,Saavedra,Eduardo,Medium,commercialbike
+10353,46,81.17,5,3733.82,12/4/2004 0:00,Shipped,4,12,2004,Motorcycles,99,S32_1374,Gift Ideas Corp.,2035554407,2440 Pompton St.,,Glendale,CT,97561,USA,,Lewis,Dan,Medium,commercialbike
+10363,50,100.0,2,6576.5,1/6/2005 0:00,Shipped,1,1,2005,Motorcycles,99,S32_1374,Suominen Souveniers,+358 9 8045 555,"Software Engineering Center, SEC Oy",,Espoo,,FIN-02271,Finland,EMEA,Suominen,Kalle,Medium,commercialbike
+10375,37,100.0,3,6353.27,2/3/2005 0:00,Shipped,1,2,2005,Motorcycles,99,S32_1374,La Rochelle Gifts,40.67.8555,"67, rue des Cinquante Otages",,Nantes,,44000,France,EMEA,Labrune,Janine,Medium,commercialbike
+10387,44,94.9,1,4175.6,3/2/2005 0:00,Shipped,1,3,2005,Motorcycles,99,S32_1374,"Dragon Souveniers, Ltd.",+65 221 7555,"Bronz Sok., Bronz Apt. 3/6 Tesvikiye",,Singapore,,79903,Singapore,Japan,Natividad,Eric,Medium,commercialbike
+10401,49,100.0,1,4992.61,4/3/2005 0:00,On Hold,2,4,2005,Motorcycles,99,S32_1374,Tekni Collectables Inc.,2015559350,7476 Moss Rd.,,Newark,NJ,94019,USA,,Brown,William,Medium,commercialbike
+10416,45,100.0,2,4764.6,5/10/2005 0:00,Shipped,2,5,2005,Motorcycles,99,S32_1374,L'ordine Souveniers,0522-556555,Strada Provinciale 124,,Reggio Emilia,,42100,Italy,EMEA,Moroni,Maurizio,Medium,commercialbike
+10108,27,43.45,13,1173.15,3/3/2003 0:00,Shipped,1,3,2003,Motorcycles,40,S32_2206,Cruz & Sons Co.,+63 2 555 3587,15 McCallum Street - NatWest Center #13-03,,Makati City,,1227 MM,Philippines,Japan,Cruz,Arnold,Small,commercialbike
+10122,31,44.66,17,1384.46,5/8/2003 0:00,Shipped,2,5,2003,Motorcycles,40,S32_2206,Marseille Mini Autos,91.24.4555,"12, rue des Bouchers",,Marseille,,13008,France,EMEA,Lebihan,Laurence,Small,commercialbike
+10135,33,40.23,14,1327.59,7/2/2003 0:00,Shipped,3,7,2003,Motorcycles,40,S32_2206,Mini Gifts Distributors Ltd.,4155551450,5677 Strong St.,,San Rafael,CA,97562,USA,,Nelson,Valarie,Small,commercialbike
+10145,31,35.8,1,1109.8,8/25/2003 0:00,Shipped,3,8,2003,Motorcycles,40,S32_2206,Toys4GrownUps.com,6265557265,78934 Hillside Dr.,,Pasadena,CA,90003,USA,,Young,Julie,Small,commercialbike
+10159,35,35.4,9,1239.0,10/10/2003 0:00,Shipped,4,10,2003,Motorcycles,40,S32_2206,Corporate Gift Ideas Co.,6505551386,7734 Strong St.,,San Francisco,CA,,USA,,Brown,Julie,Small,commercialbike
+10169,26,39.83,9,1035.58,11/4/2003 0:00,Shipped,4,11,2003,Motorcycles,40,S32_2206,"Anna's Decorations, Ltd",02 9936 8555,201 Miller Street,Level 15,North Sydney,NSW,2060,Australia,APAC,O'Hara,Anna,Small,commercialbike
+10180,34,45.46,4,1545.64,11/11/2003 0:00,Shipped,4,11,2003,Motorcycles,40,S32_2206,Daedalus Designs Imports,20.16.1555,"184, chausse de Tournai",,Lille,,59000,France,EMEA,Rance,Martine,Small,commercialbike
+10190,46,32.99,1,1517.54,11/19/2003 0:00,Shipped,4,11,2003,Motorcycles,40,S32_2206,Euro Shopping Channel,(91) 555 94 44,"C/ Moralzarzal, 86",,Madrid,,28034,Spain,EMEA,Freyre,Diego,Small,commercialbike
+10211,41,42.24,9,1731.84,1/15/2004 0:00,Shipped,1,1,2004,Motorcycles,40,S32_2206,Auto Canal Petit,(1) 47.55.6555,"25, rue Lauriston",,Paris,,75016,France,EMEA,Perrier,Dominique,Small,commercialbike
+10224,43,39.43,2,1695.49,2/21/2004 0:00,Shipped,1,2,2004,Motorcycles,40,S32_2206,Daedalus Designs Imports,20.16.1555,"184, chausse de Tournai",,Lille,,59000,France,EMEA,Rance,Martine,Small,commercialbike
+10237,26,40.23,2,1045.98,4/5/2004 0:00,Shipped,2,4,2004,Motorcycles,40,S32_2206,Vitachrome Inc.,2125551500,2678 Kingston Rd.,Suite 101,NYC,NY,10022,USA,,Frick,Michael,Small,commercialbike
+10252,36,48.28,6,1738.08,5/26/2004 0:00,Shipped,2,5,2004,Motorcycles,40,S32_2206,Auto Canal Petit,(1) 47.55.6555,"25, rue Lauriston",,Paris,,75016,France,EMEA,Perrier,Dominique,Small,commercialbike
+10264,20,32.59,4,651.8,6/30/2004 0:00,Shipped,2,6,2004,Motorcycles,40,S32_2206,Gifts4AllAges.com,6175559555,8616 Spinnaker Dr.,,Boston,MA,51003,USA,,Yoshido,Juri,Small,commercialbike
+10276,27,36.61,10,988.47,8/2/2004 0:00,Shipped,3,8,2004,Motorcycles,40,S32_2206,Online Mini Collectables,6175557555,7635 Spinnaker Dr.,,Brickhaven,MA,58339,USA,,Barajas,Miguel,Small,commercialbike
+10285,37,41.03,1,1518.11,8/27/2004 0:00,Shipped,3,8,2004,Motorcycles,40,S32_2206,Marta's Replicas Co.,6175558555,39323 Spinnaker Dr.,,Cambridge,MA,51247,USA,,Hernandez,Marta,Small,commercialbike
+10299,24,42.24,4,1013.76,9/30/2004 0:00,Shipped,3,9,2004,Motorcycles,40,S32_2206,"Toys of Finland, Co.",90-224 8555,Keskuskatu 45,,Helsinki,,21240,Finland,EMEA,Karttunen,Matti,Small,commercialbike
+10310,36,43.05,17,1549.8,10/16/2004 0:00,Shipped,4,10,2004,Motorcycles,40,S32_2206,"Toms Spezialitten, Ltd",0221-5554327,Mehrheimerstr. 369,,Koln,,50739,Germany,EMEA,Pfalzheim,Henriette,Small,commercialbike
+10319,29,38.22,5,1108.38,11/3/2004 0:00,Shipped,4,11,2004,Motorcycles,40,S32_2206,Microscale Inc.,2125551957,5290 North Pendale Street,Suite 200,NYC,NY,10022,USA,,Kuo,Kee,Small,commercialbike
+10331,28,100.0,3,4102.56,11/17/2004 0:00,Shipped,4,11,2004,Motorcycles,40,S32_2206,Motor Mint Distributors Inc.,2155559857,11328 Douglas Av.,,Philadelphia,PA,71270,USA,,Hernandez,Rosa,Medium,commercialbike
+10343,29,100.0,5,3713.16,11/24/2004 0:00,Shipped,4,11,2004,Motorcycles,40,S32_2206,Reims Collectables,26.47.1555,59 rue de l'Abbaye,,Reims,,51100,France,EMEA,Henriot,Paul,Medium,commercialbike
+10355,38,39.83,10,1513.54,12/7/2004 0:00,Shipped,4,12,2004,Motorcycles,40,S32_2206,Euro Shopping Channel,(91) 555 94 44,"C/ Moralzarzal, 86",,Madrid,,28034,Spain,EMEA,Freyre,Diego,Small,commercialbike
+10364,48,48.28,1,2317.44,1/6/2005 0:00,Shipped,1,1,2005,Motorcycles,40,S32_2206,Marseille Mini Autos,91.24.4555,"12, rue des Bouchers",,Marseille,,13008,France,EMEA,Lebihan,Laurence,Small,commercialbike
+10378,40,82.46,1,3298.4,2/10/2005 0:00,Shipped,1,2,2005,Motorcycles,40,S32_2206,Euro Shopping Channel,(91) 555 94 44,"C/ Moralzarzal, 86",,Madrid,,28034,Spain,EMEA,Freyre,Diego,Medium,commercialbike
+10390,41,44.56,11,1826.96,3/4/2005 0:00,Shipped,1,3,2005,Motorcycles,40,S32_2206,Mini Gifts Distributors Ltd.,4155551450,5677 Strong St.,,San Rafael,CA,97562,USA,,Nelson,Valarie,Small,commercialbike
+10403,30,40.23,2,1206.9,4/8/2005 0:00,Shipped,2,4,2005,Motorcycles,40,S32_2206,"UK Collectables, Ltd.",(171) 555-2282,Berkeley Gardens 12  Brewery,,Liverpool,,WX1 6LT,UK,EMEA,Devon,Elizabeth,Small,commercialbike
+10108,31,100.0,16,3669.78,3/3/2003 0:00,Shipped,1,3,2003,Motorcycles,102,S32_4485,Cruz & Sons Co.,+63 2 555 3587,15 McCallum Street - NatWest Center #13-03,,Makati City,,1227 MM,Philippines,Japan,Cruz,Arnold,Medium,commercialbike
+10121,25,86.74,3,2168.5,5/7/2003 0:00,Shipped,2,5,2003,Motorcycles,102,S32_4485,Reims Collectables,26.47.1555,59 rue de l'Abbaye,,Reims,,51100,France,EMEA,Henriot,Paul,Small,commercialbike
+10135,30,89.8,17,2694.0,7/2/2003 0:00,Shipped,3,7,2003,Motorcycles,102,S32_4485,Mini Gifts Distributors Ltd.,4155551450,5677 Strong St.,,San Rafael,CA,97562,USA,,Nelson,Valarie,Small,commercialbike
+10145,27,100.0,4,3251.34,8/25/2003 0:00,Shipped,3,8,2003,Motorcycles,102,S32_4485,Toys4GrownUps.com,6265557265,78934 Hillside Dr.,,Pasadena,CA,90003,USA,,Young,Julie,Medium,commercialbike
+10159,23,100.0,12,2347.15,10/10/2003 0:00,Shipped,4,10,2003,Motorcycles,102,S32_4485,Corporate Gift Ideas Co.,6505551386,7734 Strong St.,,San Francisco,CA,,USA,,Brown,Julie,Small,commercialbike
+10169,34,100.0,12,3920.88,11/4/2003 0:00,Shipped,4,11,2003,Motorcycles,102,S32_4485,"Anna's Decorations, Ltd",02 9936 8555,201 Miller Street,Level 15,North Sydney,NSW,2060,Australia,APAC,O'Hara,Anna,Medium,commercialbike
+10180,22,100.0,7,2514.6,11/11/2003 0:00,Shipped,4,11,2003,Motorcycles,102,S32_4485,Daedalus Designs Imports,20.16.1555,"184, chausse de Tournai",,Lille,,59000,France,EMEA,Rance,Martine,Small,commercialbike
+10190,42,85.72,4,3600.24,11/19/2003 0:00,Shipped,4,11,2003,Motorcycles,102,S32_4485,Euro Shopping Channel,(91) 555 94 44,"C/ Moralzarzal, 86",,Madrid,,28034,Spain,EMEA,Freyre,Diego,Medium,commercialbike
+10211,37,100.0,12,4040.03,1/15/2004 0:00,Shipped,1,1,2004,Motorcycles,102,S32_4485,Auto Canal Petit,(1) 47.55.6555,"25, rue Lauriston",,Paris,,75016,France,EMEA,Perrier,Dominique,Medium,commercialbike
+10224,30,100.0,5,3336.9,2/21/2004 0:00,Shipped,1,2,2004,Motorcycles,102,S32_4485,Daedalus Designs Imports,20.16.1555,"184, chausse de Tournai",,Lille,,59000,France,EMEA,Rance,Martine,Medium,commercialbike
+10237,27,100.0,5,3113.64,4/5/2004 0:00,Shipped,2,4,2004,Motorcycles,102,S32_4485,Vitachrome Inc.,2125551500,2678 Kingston Rd.,Suite 101,NYC,NY,10022,USA,,Frick,Michael,Medium,commercialbike
+10252,25,100.0,9,2832.0,5/26/2004 0:00,Shipped,2,5,2004,Motorcycles,102,S32_4485,Auto Canal Petit,(1) 47.55.6555,"25, rue Lauriston",,Paris,,75016,France,EMEA,Perrier,Dominique,Small,commercialbike
+10264,34,97.97,7,3330.98,6/30/2004 0:00,Shipped,2,6,2004,Motorcycles,102,S32_4485,Gifts4AllAges.com,6175559555,8616 Spinnaker Dr.,,Boston,MA,51003,USA,,Yoshido,Juri,Medium,commercialbike
+10276,38,100.0,13,4304.64,8/2/2004 0:00,Shipped,3,8,2004,Motorcycles,102,S32_4485,Online Mini Collectables,6175557555,7635 Spinnaker Dr.,,Brickhaven,MA,58339,USA,,Barajas,Miguel,Medium,commercialbike
+10285,26,100.0,4,2600.26,8/27/2004 0:00,Shipped,3,8,2004,Motorcycles,102,S32_4485,Marta's Replicas Co.,6175558555,39323 Spinnaker Dr.,,Cambridge,MA,51247,USA,,Hernandez,Marta,Small,commercialbike
+10299,38,100.0,7,4382.16,9/30/2004 0:00,Shipped,3,9,2004,Motorcycles,102,S32_4485,"Toys of Finland, Co.",90-224 8555,Keskuskatu 45,,Helsinki,,21240,Finland,EMEA,Karttunen,Matti,Medium,commercialbike
+10309,50,84.7,3,4235.0,10/15/2004 0:00,Shipped,4,10,2004,Motorcycles,102,S32_4485,Baane Mini Imports,07-98 9555,Erling Skakkes gate 78,,Stavern,,4110,Norway,EMEA,Bergulfsen,Jonas,Medium,commercialbike
+10319,22,100.0,8,2626.8,11/3/2004 0:00,Shipped,4,11,2004,Motorcycles,102,S32_4485,Microscale Inc.,2125551957,5290 North Pendale Street,Suite 200,NYC,NY,10022,USA,,Kuo,Kee,Small,commercialbike
+10331,32,100.0,4,5026.56,11/17/2004 0:00,Shipped,4,11,2004,Motorcycles,102,S32_4485,Motor Mint Distributors Inc.,2155559857,11328 Douglas Av.,,Philadelphia,PA,71270,USA,,Hernandez,Rosa,Medium,commercialbike
+10341,31,71.02,4,2201.62,11/24/2004 0:00,Shipped,4,11,2004,Motorcycles,102,S32_4485,Salzburg Collectables,6562-9555,Geislweg 14,,Salzburg,,5020,Austria,EMEA,Pipps,Georg,Small,commercialbike
+10355,40,100.0,5,4326.8,12/7/2004 0:00,Shipped,4,12,2004,Motorcycles,102,S32_4485,Euro Shopping Channel,(91) 555 94 44,"C/ Moralzarzal, 86",,Madrid,,28034,Spain,EMEA,Freyre,Diego,Medium,commercialbike
+10365,22,100.0,3,3425.18,1/7/2005 0:00,Shipped,1,1,2005,Motorcycles,102,S32_4485,Mini Creations Ltd.,5085559555,4575 Hillside Dr.,,New Bedford,MA,50553,USA,,Tam,Wing C,Medium,commercialbike
+10375,41,100.0,15,4701.88,2/3/2005 0:00,Shipped,1,2,2005,Motorcycles,102,S32_4485,La Rochelle Gifts,40.67.8555,"67, rue des Cinquante Otages",,Nantes,,44000,France,EMEA,Labrune,Janine,Medium,commercialbike
+10390,45,48.98,12,2204.1,3/4/2005 0:00,Shipped,1,3,2005,Motorcycles,102,S32_4485,Mini Gifts Distributors Ltd.,4155551450,5677 Strong St.,,San Rafael,CA,97562,USA,,Nelson,Valarie,Small,commercialbike
+10403,45,100.0,5,5189.4,4/8/2005 0:00,Shipped,2,4,2005,Motorcycles,102,S32_4485,"UK Collectables, Ltd.",(171) 555-2282,Berkeley Gardens 12  Brewery,,Liverpool,,WX1 6LT,UK,EMEA,Devon,Elizabeth,Medium,commercialbike
+10108,34,82.99,14,2821.66,3/3/2003 0:00,Shipped,1,3,2003,Motorcycles,81,S50_4713,Cruz & Sons Co.,+63 2 555 3587,15 McCallum Street - NatWest Center #13-03,,Makati City,,1227 MM,Philippines,Japan,Cruz,Arnold,Small,commercialbike
+10121,44,74.85,1,3293.4,5/7/2003 0:00,Shipped,2,5,2003,Motorcycles,81,S50_4713,Reims Collectables,26.47.1555,59 rue de l'Abbaye,,Reims,,51100,France,EMEA,Henriot,Paul,Medium,commercialbike
+10135,44,96.0,15,4224.0,7/2/2003 0:00,Shipped,3,7,2003,Motorcycles,81,S50_4713,Mini Gifts Distributors Ltd.,4155551450,5677 Strong St.,,San Rafael,CA,97562,USA,,Nelson,Valarie,Medium,commercialbike
+10145,38,81.36,2,3091.68,8/25/2003 0:00,Shipped,3,8,2003,Motorcycles,81,S50_4713,Toys4GrownUps.com,6265557265,78934 Hillside Dr.,,Pasadena,CA,90003,USA,,Young,Julie,Medium,commercialbike
+10159,31,71.6,10,2219.6,10/10/2003 0:00,Shipped,4,10,2003,Motorcycles,81,S50_4713,Corporate Gift Ideas Co.,6505551386,7734 Strong St.,,San Francisco,CA,,USA,,Brown,Julie,Small,commercialbike
+10169,48,80.55,10,3866.4,11/4/2003 0:00,Shipped,4,11,2003,Motorcycles,81,S50_4713,"Anna's Decorations, Ltd",02 9936 8555,201 Miller Street,Level 15,North Sydney,NSW,2060,Australia,APAC,O'Hara,Anna,Medium,commercialbike
+10180,21,93.56,5,1964.76,11/11/2003 0:00,Shipped,4,11,2003,Motorcycles,81,S50_4713,Daedalus Designs Imports,20.16.1555,"184, chausse de Tournai",,Lille,,59000,France,EMEA,Rance,Martine,Small,commercialbike
+10190,40,66.72,2,2668.8,11/19/2003 0:00,Shipped,4,11,2003,Motorcycles,81,S50_4713,Euro Shopping Channel,(91) 555 94 44,"C/ Moralzarzal, 86",,Madrid,,28034,Spain,EMEA,Freyre,Diego,Small,commercialbike
+10211,40,80.55,10,3222.0,1/15/2004 0:00,Shipped,1,1,2004,Motorcycles,81,S50_4713,Auto Canal Petit,(1) 47.55.6555,"25, rue Lauriston",,Paris,,75016,France,EMEA,Perrier,Dominique,Medium,commercialbike
+10224,50,77.29,3,3864.5,2/21/2004 0:00,Shipped,1,2,2004,Motorcycles,81,S50_4713,Daedalus Designs Imports,20.16.1555,"184, chausse de Tournai",,Lille,,59000,France,EMEA,Rance,Martine,Medium,commercialbike
+10237,20,68.34,3,1366.8,4/5/2004 0:00,Shipped,2,4,2004,Motorcycles,81,S50_4713,Vitachrome Inc.,2125551500,2678 Kingston Rd.,Suite 101,NYC,NY,10022,USA,,Frick,Michael,Small,commercialbike
+10252,48,72.41,7,3475.68,5/26/2004 0:00,Shipped,2,5,2004,Motorcycles,81,S50_4713,Auto Canal Petit,(1) 47.55.6555,"25, rue Lauriston",,Paris,,75016,France,EMEA,Perrier,Dominique,Medium,commercialbike
+10264,47,89.5,5,4206.5,6/30/2004 0:00,Shipped,2,6,2004,Motorcycles,81,S50_4713,Gifts4AllAges.com,6175559555,8616 Spinnaker Dr.,,Boston,MA,51003,USA,,Yoshido,Juri,Medium,commercialbike
+10276,21,70.78,11,1486.38,8/2/2004 0:00,Shipped,3,8,2004,Motorcycles,81,S50_4713,Online Mini Collectables,6175557555,7635 Spinnaker Dr.,,Brickhaven,MA,58339,USA,,Barajas,Miguel,Small,commercialbike
+10285,39,78.92,2,3077.88,8/27/2004 0:00,Shipped,3,8,2004,Motorcycles,81,S50_4713,Marta's Replicas Co.,6175558555,39323 Spinnaker Dr.,,Cambridge,MA,51247,USA,,Hernandez,Marta,Medium,commercialbike
+10299,44,80.55,5,3544.2,9/30/2004 0:00,Shipped,3,9,2004,Motorcycles,81,S50_4713,"Toys of Finland, Co.",90-224 8555,Keskuskatu 45,,Helsinki,,21240,Finland,EMEA,Karttunen,Matti,Medium,commercialbike
+10309,28,88.68,1,2483.04,10/15/2004 0:00,Shipped,4,10,2004,Motorcycles,81,S50_4713,Baane Mini Imports,07-98 9555,Erling Skakkes gate 78,,Stavern,,4110,Norway,EMEA,Bergulfsen,Jonas,Small,commercialbike
+10319,45,77.29,6,3478.05,11/3/2004 0:00,Shipped,4,11,2004,Motorcycles,81,S50_4713,Microscale Inc.,2125551957,5290 North Pendale Street,Suite 200,NYC,NY,10022,USA,,Kuo,Kee,Medium,commercialbike
+10331,20,100.0,5,3657.8,11/17/2004 0:00,Shipped,4,11,2004,Motorcycles,81,S50_4713,Motor Mint Distributors Inc.,2155559857,11328 Douglas Av.,,Philadelphia,PA,71270,USA,,Hernandez,Rosa,Medium,commercialbike
+10341,38,100.0,3,4682.36,11/24/2004 0:00,Shipped,4,11,2004,Motorcycles,81,S50_4713,Salzburg Collectables,6562-9555,Geislweg 14,,Salzburg,,5020,Austria,EMEA,Pipps,Georg,Medium,commercialbike
+10356,26,100.0,4,3937.7,12/9/2004 0:00,Shipped,4,12,2004,Motorcycles,81,S50_4713,Lyon Souveniers,+33 1 46 62 7555,27 rue du Colonel Pierre Avia,,Paris,,75508,France,EMEA,Da Cunha,Daniel,Medium,commercialbike
+10365,44,100.0,2,4984.32,1/7/2005 0:00,Shipped,1,1,2005,Motorcycles,81,S50_4713,Mini Creations Ltd.,5085559555,4575 Hillside Dr.,,New Bedford,MA,50553,USA,,Tam,Wing C,Medium,commercialbike
+10375,49,100.0,8,5406.66,2/3/2005 0:00,Shipped,1,2,2005,Motorcycles,81,S50_4713,La Rochelle Gifts,40.67.8555,"67, rue des Cinquante Otages",,Nantes,,44000,France,EMEA,Labrune,Janine,Medium,commercialbike
+10390,22,100.0,13,3491.18,3/4/2005 0:00,Shipped,1,3,2005,Motorcycles,81,S50_4713,Mini Gifts Distributors Ltd.,4155551450,5677 Strong St.,,San Rafael,CA,97562,USA,,Nelson,Valarie,Medium,commercialbike
+10403,31,68.34,3,2118.54,4/8/2005 0:00,Shipped,2,4,2005,Motorcycles,81,S50_4713,"UK Collectables, Ltd.",(171) 555-2282,Berkeley Gardens 12  Brewery,,Liverpool,,WX1 6LT,UK,EMEA,Devon,Elizabeth,Small,commercialbike

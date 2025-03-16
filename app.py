@@ -16,7 +16,7 @@ logger = logging.getLogger(__name__)
 
 # Page configuration
 st.set_page_config(
-    page_title="Motorcycle Dealership DSS",
+    page_title="Voyager DSS",
     page_icon="🏍️",
     layout="wide",
     initial_sidebar_state="expanded"
@@ -52,6 +52,24 @@ st.markdown("""
     .centered-text {
         text-align: center;
     }
+    .header-container {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 1rem 0;
+    }
+    .login-btn {
+        background-color: #007bff;
+        color: white;
+        padding: 0.5rem 1rem;
+        border-radius: 5px;
+        text-decoration: none;
+        font-weight: bold;
+    }
+    .login-btn:hover {
+        background-color: #0056b3;
+        text-decoration: none;
+    }
     </style>
 """, unsafe_allow_html=True)
 
@@ -61,6 +79,16 @@ try:
     init_db()
     logger.info("Populating database with sample data...")
     populate_database()
+
+    # Import additional sales data
+    try:
+        logger.info("Importing additional sales data...")
+        sales_data = pd.read_csv('UpdatedMotorcycleSales.csv')
+        sales_data.to_sql('sales', next(get_db()).bind, if_exists='append', index=False)
+        logger.info("Additional sales data imported successfully")
+    except Exception as e:
+        logger.warning(f"Could not import additional sales data: {str(e)}")
+
     logger.info("Database initialization complete")
 except Exception as e:
     logger.error(f"Database initialization failed: {str(e)}")
@@ -98,15 +126,24 @@ page = st.sidebar.selectbox(
      "🎯 What-If", "📥 Data"]
 )
 
+# Display logo and login button
+st.markdown("""
+    <div class="header-container">
+        <img src="static/voyager_logo.svg" alt="Voyager Logo" width="200">
+        <a href="#" class="login-btn">Login</a>
+    </div>
+""", unsafe_allow_html=True)
+
+
 # Main content area
 if page == "🏠 Home":
-    # Hero Section
-    st.markdown("<h1 class='centered-text'>🏍️ Motorcycle Dealership</h1>", unsafe_allow_html=True)
-    st.markdown("<h2 class='centered-text'>Decision Support System</h2>", unsafe_allow_html=True)
+    # Hero Section with updated branding
+    st.markdown("<h1 class='centered-text'>Welcome to Voyager</h1>", unsafe_allow_html=True)
+    st.markdown("<h2 class='centered-text'>Motorcycle Dealership Intelligence Platform</h2>", unsafe_allow_html=True)
 
     st.markdown("""
         <div class='centered-text'>
-        Empower your dealership with data-driven insights and advanced analytics
+        Transform your dealership with AI-powered insights and advanced analytics
         </div>
     """, unsafe_allow_html=True)
 
