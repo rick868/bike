@@ -1,6 +1,7 @@
 import streamlit as st
 import pandas as pd
 import plotly.express as px
+import plotly.graph_objects as go
 import numpy as np
 from database import get_db, init_db
 from data_generator import populate_database
@@ -263,22 +264,120 @@ elif page == "📈 Market Analysis":
 elif page == "🔮 Forecasting":
     st.header("Sales Forecasting")
 
-    periods = st.slider("Forecast Periods (Days)", 7, 90, 30)
-    forecast = data_analytics.sales_forecast(periods=periods)
+    # Model selection and parameters
+    col1, col2 = st.columns(2)
+    with col1:
+        model_type = st.selectbox(
+            "Select Forecasting Model",
+            ["prophet", "arima", "ensemble"],
+            help="Choose the forecasting model to use"
+        )
+        periods = st.slider(
+            "Forecast Periods (Days)", 
+            7, 90, 30,
+            help="Number of days to forecast into the future"
+        )
 
-    # Create forecast visualization
-    forecast_df = pd.DataFrame({
-        'Date': forecast['dates'],
-        'Forecast': forecast['predictions'],
-        'Lower Bound': forecast['lower_bound'],
-        'Upper Bound': forecast['upper_bound']
-    })
+    with col2:
+        if model_type == "prophet":
+            yearly_seasonality = st.checkbox("Include Yearly Seasonality", value=True)
+            weekly_seasonality = st.checkbox("Include Weekly Seasonality", value=True)
+            params = {
+                'yearly_seasonality': yearly_seasonality,
+                'weekly_seasonality': weekly_seasonality
+            }
+        elif model_type == "arima":
+            p = st.number_input("AR Order (p)", 0, 5, 1)
+            d = st.number_input("Difference Order (d)", 0, 2, 1)
+            q = st.number_input("MA Order (q)", 0, 5, 1)
+            params = {'order': (p, d, q)}
+        else:
+            params = None
 
-    st.line_chart(forecast_df.set_index('Date'))
+    # Generate forecast
+    with st.spinner("Generating forecast..."):
+        try:
+            forecast = data_analytics.sales_forecast(
+                periods=periods,
+                model_type=model_type,
+                params=params
+            )
 
-    st.write("Forecast Summary:")
-    st.metric("Average Forecasted Daily Sales", 
-              f"${np.mean(forecast['predictions']):,.2f}")
+            # Create forecast visualization
+            forecast_df = pd.DataFrame({
+                'Date': forecast['dates'],
+                'Forecast': forecast['predictions'],
+                'Lower Bound': forecast['lower_bound'],
+                'Upper Bound': forecast['upper_bound']
+            })
+
+            # Plot the forecast
+            st.subheader("Sales Forecast")
+            fig = go.Figure()
+            fig.add_trace(go.Scatter(
+                x=forecast_df['Date'],
+                y=forecast_df['Forecast'],
+                name='Forecast',
+                line=dict(color='#007bff')
+            ))
+            fig.add_trace(go.Scatter(
+                x=forecast_df['Date'],
+                y=forecast_df['Upper Bound'],
+                fill=None,
+                mode='lines',
+                line=dict(color='rgba(0,123,255,0.2)'),
+                name='Upper Bound'
+            ))
+            fig.add_trace(go.Scatter(
+                x=forecast_df['Date'],
+                y=forecast_df['Lower Bound'],
+                fill='tonexty',
+                mode='lines',
+                line=dict(color='rgba(0,123,255,0.2)'),
+                name='Lower Bound'
+            ))
+            fig.update_layout(
+                title='Sales Forecast with Confidence Intervals',
+                xaxis_title='Date',
+                yaxis_title='Sales Amount ($)',
+                hovermode='x unified'
+            )
+            st.plotly_chart(fig, use_container_width=True)
+
+            # Display metrics
+            st.subheader("Forecast Metrics")
+            metrics = forecast['metrics']
+            if isinstance(metrics, dict):
+                if model_type == 'ensemble':
+                    col1, col2 = st.columns(2)
+                    with col1:
+                        st.write("Prophet Model Metrics")
+                        for k, v in metrics['prophet'].items():
+                            st.metric(k.upper(), f"{v:.2f}")
+                    with col2:
+                        st.write("ARIMA Model Metrics")
+                        for k, v in metrics['arima'].items():
+                            st.metric(k.upper(), f"{v:.2f}")
+                else:
+                    for k, v in metrics.items():
+                        st.metric(k.upper(), f"{v:.2f}")
+
+            # Summary statistics
+            st.subheader("Forecast Summary")
+            st.metric(
+                "Average Forecasted Daily Sales",
+                f"${np.mean(forecast['predictions']):,.2f}",
+                help="Average daily sales predicted for the forecast period"
+            )
+            st.metric(
+                "Total Forecasted Sales",
+                f"${np.sum(forecast['predictions']):,.2f}",
+                help="Total sales predicted for the entire forecast period"
+            )
+
+        except Exception as e:
+            st.error(f"Error generating forecast: {str(e)}")
+            logger.error(f"Forecasting error: {str(e)}")
 
 elif page == "🎯 What-If Analysis":
     st.header("What-If Analysis")

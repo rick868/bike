@@ -12,5 +12,6 @@ dependencies = [
     "scikit-learn>=1.6.1",
     "scipy>=1.15.2",
     "sqlalchemy>=2.0.39",
+    "statsmodels>=0.14.4",
     "streamlit>=1.43.2",
 ]
