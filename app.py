@@ -32,28 +32,57 @@ if 'username' not in st.session_state:
 st.markdown("""
     <style>
     .reportview-container {
-        background: #f8f9fa
+        background: #f8f9fa;
     }
     .sidebar .sidebar-content {
-        background: #ffffff
+        background: #ffffff;
+        border-right: 1px solid #e9ecef;
     }
     .stButton>button {
         width: 100%;
         margin-bottom: 10px;
+        background-color: #007bff;
+        color: white;
+        border: none;
+        padding: 0.5rem 1rem;
+        border-radius: 5px;
+        transition: all 0.3s ease;
+    }
+    .stButton>button:hover {
+        background-color: #0056b3;
+        transform: translateY(-2px);
+        box-shadow: 0 2px 5px rgba(0,0,0,0.1);
     }
     .stProgress .st-bo {
         background-color: #007bff;
     }
+    .stMetric {
+        background-color: white;
+        padding: 1rem;
+        border-radius: 8px;
+        box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+        transition: transform 0.3s ease;
+    }
+    .stMetric:hover {
+        transform: translateY(-2px);
+    }
     .big-font {
         font-size: 24px !important;
         font-weight: bold;
+        color: #2c3e50;
     }
     .feature-box {
-        padding: 20px;
-        border-radius: 5px;
-        background-color: #f8f9fa;
-        margin: 10px 0;
-        border: 1px solid #dee2e6;
+        padding: 1.5rem;
+        border-radius: 8px;
+        background-color: white;
+        margin: 15px 0;
+        border: 1px solid #e9ecef;
+        box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+        transition: all 0.3s ease;
+    }
+    .feature-box:hover {
+        transform: translateY(-3px);
+        box-shadow: 0 4px 8px rgba(0,0,0,0.1);
     }
     .centered-text {
         text-align: center;
@@ -62,27 +91,44 @@ st.markdown("""
         display: flex;
         justify-content: space-between;
         align-items: center;
-        padding: 1rem 0;
+        padding: 1.5rem 0;
+        margin-bottom: 2rem;
+        border-bottom: 1px solid #e9ecef;
     }
     .login-btn {
         background-color: #007bff;
         color: white;
-        padding: 0.5rem 1rem;
+        padding: 0.75rem 1.5rem;
         border-radius: 5px;
         text-decoration: none;
         font-weight: bold;
+        transition: all 0.3s ease;
     }
     .login-btn:hover {
         background-color: #0056b3;
-        text-decoration: none;
+        transform: translateY(-2px);
+        box-shadow: 0 2px 5px rgba(0,0,0,0.1);
     }
     .login-container {
         max-width: 400px;
-        margin: 2rem auto;
+        margin: 3rem auto;
         padding: 2rem;
-        border: 1px solid #dee2e6;
-        border-radius: 5px;
+        border: 1px solid #e9ecef;
+        border-radius: 8px;
         background: white;
+        box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+    }
+    .st-emotion-cache-16txtl3 h1 {
+        font-weight: 600;
+        color: #2c3e50;
+    }
+    .st-emotion-cache-16txtl3 h2, .st-emotion-cache-16txtl3 h3 {
+        color: #34495e;
+        margin-top: 2rem;
+    }
+    .st-emotion-cache-16txtl3 p {
+        color: #596275;
+        line-height: 1.6;
     }
     </style>
 """, unsafe_allow_html=True)
