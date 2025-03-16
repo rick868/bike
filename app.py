@@ -13,6 +13,32 @@ import logging
 logging.basicConfig(level=logging.INFO)
 logger = logging.getLogger(__name__)
 
+# Page configuration
+st.set_page_config(
+    page_title="Motorcycle Dealership DSS",
+    page_icon="🏍️",
+    layout="wide",
+    initial_sidebar_state="expanded"
+)
+
+# Custom CSS
+st.markdown("""
+    <style>
+    .reportview-container {
+        background: #f8f9fa
+    }
+    .sidebar .sidebar-content {
+        background: #ffffff
+    }
+    .stButton>button {
+        width: 100%;
+    }
+    .stProgress .st-bo {
+        background-color: #007bff;
+    }
+    </style>
+""", unsafe_allow_html=True)
+
 # Initialize database with error handling
 try:
     logger.info("Initializing database...")
@@ -47,44 +73,92 @@ except Exception as e:
     st.error("Failed to initialize application models. Please check the logs.")
     st.stop()
 
-st.title("Motorcycle Dealership DSS")
+# Header
+st.title("🏍️ Motorcycle Dealership DSS")
+st.markdown("""
+    This Decision Support System helps manage inventory, analyze sales, 
+    and make data-driven decisions for your motorcycle dealership.
+""")
 
-# Sidebar for navigation
+# Sidebar navigation with icons
+st.sidebar.title("Navigation")
 page = st.sidebar.selectbox(
     "Select Dashboard",
-    ["Overview", "Inventory Management", "Sales Analytics", "Customer Insights", 
-     "Market Analysis", "Forecasting", "What-If Analysis", "Data Import/Export"]
+    ["📊 Overview", "📦 Inventory Management", "💰 Sales Analytics", 
+     "👥 Customer Insights", "📈 Market Analysis", "🔮 Forecasting", 
+     "🎯 What-If Analysis", "📥 Data Import/Export"]
 )
 
-if page == "Overview":
+# Main content area
+if page == "📊 Overview":
     st.header("Dashboard Overview")
 
-    # Key metrics in columns
-    col1, col2, col3 = st.columns(3)
+    with st.spinner("Loading metrics..."):
+        try:
+            inventory_metrics = dss.get_inventory_metrics()
+            sales_metrics = dss.get_sales_metrics()
+            customer_metrics = dss.get_customer_metrics()
 
-    inventory_metrics = dss.get_inventory_metrics()
-    sales_metrics = dss.get_sales_metrics()
-    customer_metrics = dss.get_customer_metrics()
+            # KPI Cards using columns
+            col1, col2, col3 = st.columns(3)
 
-    with col1:
-        st.metric("Total Inventory", f"{inventory_metrics['total_inventory']:,}")
-        st.metric("Average Price", f"${inventory_metrics['avg_price']:,.2f}")
+            with col1:
+                st.metric(
+                    "Total Inventory",
+                    f"{inventory_metrics['total_inventory']:,}",
+                    help="Total number of motorcycles in stock"
+                )
+                st.metric(
+                    "Average Price",
+                    f"${inventory_metrics['avg_price']:,.2f}",
+                    help="Average price of motorcycles in inventory"
+                )
 
-    with col2:
-        st.metric("Total Sales", f"${sales_metrics['total_sales']:,.2f}")
-        st.metric("Units Sold", f"{sales_metrics['total_units']:,}")
+            with col2:
+                st.metric(
+                    "Total Sales",
+                    f"${sales_metrics['total_sales']:,.2f}",
+                    help="Total revenue from sales"
+                )
+                st.metric(
+                    "Units Sold",
+                    f"{sales_metrics['total_units']:,}",
+                    help="Total number of motorcycles sold"
+                )
 
-    with col3:
-        st.metric("Total Customers", f"{customer_metrics['total_customers']:,}")
-        st.metric("Avg. Customer LTV", f"${customer_metrics['avg_ltv']:,.2f}")
+            with col3:
+                st.metric(
+                    "Total Customers",
+                    f"{customer_metrics['total_customers']:,}",
+                    help="Total number of unique customers"
+                )
+                st.metric(
+                    "Avg. Customer LTV",
+                    f"${customer_metrics['avg_ltv']:,.2f}",
+                    help="Average customer lifetime value"
+                )
 
-    # Charts
-    sales_data = dss.get_sales_data()
-    inventory_data = dss.get_inventory_data()
-    st.plotly_chart(create_sales_trend_chart(sales_data))
-    st.plotly_chart(create_inventory_pie_chart(inventory_data))
+            # Charts
+            col1, col2 = st.columns(2)
+            with col1:
+                sales_data = dss.get_sales_data()
+                st.plotly_chart(
+                    create_sales_trend_chart(sales_data),
+                    use_container_width=True
+                )
 
-elif page == "Inventory Management":
+            with col2:
+                inventory_data = dss.get_inventory_data()
+                st.plotly_chart(
+                    create_inventory_pie_chart(inventory_data),
+                    use_container_width=True
+                )
+
+        except Exception as e:
+            logger.error(f"Error loading overview metrics: {str(e)}")
+            st.error("Failed to load metrics. Please try refreshing the page.")
+
+elif page == "📦 Inventory Management":
     st.header("Inventory Management")
 
     # Add new inventory
@@ -122,7 +196,7 @@ elif page == "Inventory Management":
         mime="text/csv"
     )
 
-elif page == "Sales Analytics":
+elif page == "💰 Sales Analytics":
     st.header("Sales Analytics")
 
     # Statistical Analysis
@@ -147,7 +221,7 @@ elif page == "Sales Analytics":
                             columns=['Region', 'Sales'])
     st.bar_chart(regions_df.set_index('Region'))
 
-elif page == "Customer Insights":
+elif page == "👥 Customer Insights":
     st.header("Customer Insights")
 
     # Customer Segmentation
@@ -171,7 +245,7 @@ elif page == "Customer Insights":
                            columns=['Risk Level', 'Count'])
     st.bar_chart(churn_df.set_index('Risk Level'))
 
-elif page == "Market Analysis":
+elif page == "📈 Market Analysis":
     st.header("Market Analysis")
 
     market_data = pd.read_sql('SELECT * FROM market_data', db.bind)
@@ -186,7 +260,7 @@ elif page == "Market Analysis":
     st.subheader("Economic Indicators Impact")
     # Add visualization for economic indicators
 
-elif page == "Forecasting":
+elif page == "🔮 Forecasting":
     st.header("Sales Forecasting")
 
     periods = st.slider("Forecast Periods (Days)", 7, 90, 30)
@@ -206,7 +280,7 @@ elif page == "Forecasting":
     st.metric("Average Forecasted Daily Sales", 
               f"${np.mean(forecast['predictions']):,.2f}")
 
-elif page == "What-If Analysis":
+elif page == "🎯 What-If Analysis":
     st.header("What-If Analysis")
 
     scenario = st.selectbox(
@@ -220,7 +294,7 @@ elif page == "What-If Analysis":
     for metric, value in impact.items():
         st.metric(metric.replace('_', ' ').title(), value)
 
-elif page == "Data Import/Export":
+elif page == "📥 Data Import/Export":
     st.header("Data Import/Export")
 
     # File Upload
