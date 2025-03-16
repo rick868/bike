@@ -33,9 +33,24 @@ st.markdown("""
     }
     .stButton>button {
         width: 100%;
+        margin-bottom: 10px;
     }
     .stProgress .st-bo {
         background-color: #007bff;
+    }
+    .big-font {
+        font-size: 24px !important;
+        font-weight: bold;
+    }
+    .feature-box {
+        padding: 20px;
+        border-radius: 5px;
+        background-color: #f8f9fa;
+        margin: 10px 0;
+        border: 1px solid #dee2e6;
+    }
+    .centered-text {
+        text-align: center;
     }
     </style>
 """, unsafe_allow_html=True)
@@ -74,24 +89,117 @@ except Exception as e:
     st.error("Failed to initialize application models. Please check the logs.")
     st.stop()
 
-# Header
-st.title("🏍️ Motorcycle Dealership DSS")
-st.markdown("""
-    This Decision Support System helps manage inventory, analyze sales, 
-    and make data-driven decisions for your motorcycle dealership.
-""")
-
 # Sidebar navigation with icons
 st.sidebar.title("Navigation")
 page = st.sidebar.selectbox(
-    "Select Dashboard",
-    ["📊 Overview", "📦 Inventory Management", "💰 Sales Analytics", 
-     "👥 Customer Insights", "📈 Market Analysis", "🔮 Forecasting", 
-     "🎯 What-If Analysis", "📥 Data Import/Export"]
+    "Select Page",
+    ["🏠 Home", "📊 Dashboard", "📦 Inventory", "💰 Sales", 
+     "👥 Customers", "📈 Market", "🔮 Forecast", 
+     "🎯 What-If", "📥 Data"]
 )
 
 # Main content area
-if page == "📊 Overview":
+if page == "🏠 Home":
+    # Hero Section
+    st.markdown("<h1 class='centered-text'>🏍️ Motorcycle Dealership</h1>", unsafe_allow_html=True)
+    st.markdown("<h2 class='centered-text'>Decision Support System</h2>", unsafe_allow_html=True)
+
+    st.markdown("""
+        <div class='centered-text'>
+        Empower your dealership with data-driven insights and advanced analytics
+        </div>
+    """, unsafe_allow_html=True)
+
+    # Quick Stats
+    try:
+        metrics = dss.get_inventory_metrics()
+        sales = dss.get_sales_metrics()
+        customers = dss.get_customer_metrics()
+
+        col1, col2, col3 = st.columns(3)
+        with col1:
+            st.info(f"📦 {metrics['total_inventory']} Motorcycles in Stock")
+        with col2:
+            st.info(f"💰 ${sales['total_sales']:,.0f} Total Sales")
+        with col3:
+            st.info(f"👥 {customers['total_customers']} Active Customers")
+    except Exception as e:
+        logger.error(f"Error loading quick stats: {str(e)}")
+        st.warning("Quick stats temporarily unavailable")
+
+    # Feature Sections
+    st.markdown("### Key Features")
+
+    col1, col2 = st.columns(2)
+
+    with col1:
+        with st.container():
+            st.markdown("""
+            <div class='feature-box'>
+                <h4>📊 Sales Analytics</h4>
+                <ul>
+                    <li>Real-time sales tracking</li>
+                    <li>Performance metrics</li>
+                    <li>Regional analysis</li>
+                </ul>
+            </div>
+            """, unsafe_allow_html=True)
+
+        with st.container():
+            st.markdown("""
+                <div class='feature-box'>
+                    <h4>🔮 Advanced Forecasting</h4>
+                    <ul>
+                        <li>Machine learning models</li>
+                        <li>Trend analysis</li>
+                        <li>Seasonal predictions</li>
+                    </ul>
+                </div>
+                """, unsafe_allow_html=True)
+
+    with col2:
+        with st.container():
+            st.markdown("""
+            <div class='feature-box'>
+                <h4>👥 Customer Insights</h4>
+                <ul>
+                    <li>Customer segmentation</li>
+                    <li>Lifetime value analysis</li>
+                    <li>Satisfaction tracking</li>
+                </ul>
+            </div>
+            """, unsafe_allow_html=True)
+
+        with st.container():
+            st.markdown("""
+                <div class='feature-box'>
+                    <h4>📈 Market Intelligence</h4>
+                    <ul>
+                        <li>Competitive analysis</li>
+                        <li>Market trends</li>
+                        <li>Price optimization</li>
+                    </ul>
+                </div>
+                """, unsafe_allow_html=True)
+
+    # Quick Access Buttons
+    st.markdown("### Quick Access")
+    col1, col2, col3 = st.columns(3)
+
+    with col1:
+        if st.button("📊 View Dashboard"):
+            st.session_state.page = "📊 Dashboard"
+            st.experimental_rerun()
+    with col2:
+        if st.button("📦 Manage Inventory"):
+            st.session_state.page = "📦 Inventory"
+            st.experimental_rerun()
+    with col3:
+        if st.button("💰 Sales Analytics"):
+            st.session_state.page = "💰 Sales"
+            st.experimental_rerun()
+
+elif page == "📊 Dashboard":
     st.header("Dashboard Overview")
 
     with st.spinner("Loading metrics..."):
@@ -159,7 +267,7 @@ if page == "📊 Overview":
             logger.error(f"Error loading overview metrics: {str(e)}")
             st.error("Failed to load metrics. Please try refreshing the page.")
 
-elif page == "📦 Inventory Management":
+elif page == "📦 Inventory":
     st.header("Inventory Management")
 
     # Add new inventory
@@ -197,7 +305,7 @@ elif page == "📦 Inventory Management":
         mime="text/csv"
     )
 
-elif page == "💰 Sales Analytics":
+elif page == "💰 Sales":
     st.header("Sales Analytics")
 
     # Statistical Analysis
@@ -222,7 +330,7 @@ elif page == "💰 Sales Analytics":
                             columns=['Region', 'Sales'])
     st.bar_chart(regions_df.set_index('Region'))
 
-elif page == "👥 Customer Insights":
+elif page == "👥 Customers":
     st.header("Customer Insights")
 
     # Customer Segmentation
@@ -246,7 +354,7 @@ elif page == "👥 Customer Insights":
                            columns=['Risk Level', 'Count'])
     st.bar_chart(churn_df.set_index('Risk Level'))
 
-elif page == "📈 Market Analysis":
+elif page == "📈 Market":
     st.header("Market Analysis")
 
     market_data = pd.read_sql('SELECT * FROM market_data', db.bind)
@@ -261,7 +369,7 @@ elif page == "📈 Market Analysis":
     st.subheader("Economic Indicators Impact")
     # Add visualization for economic indicators
 
-elif page == "🔮 Forecasting":
+elif page == "🔮 Forecast":
     st.header("Sales Forecasting")
 
     # Model selection and parameters
@@ -379,7 +487,7 @@ elif page == "🔮 Forecasting":
             st.error(f"Error generating forecast: {str(e)}")
             logger.error(f"Forecasting error: {str(e)}")
 
-elif page == "🎯 What-If Analysis":
+elif page == "🎯 What-If":
     st.header("What-If Analysis")
 
     scenario = st.selectbox(
@@ -393,7 +501,7 @@ elif page == "🎯 What-If Analysis":
     for metric, value in impact.items():
         st.metric(metric.replace('_', ' ').title(), value)
 
-elif page == "📥 Data Import/Export":
+elif page == "📥 Data":
     st.header("Data Import/Export")
 
     # File Upload
