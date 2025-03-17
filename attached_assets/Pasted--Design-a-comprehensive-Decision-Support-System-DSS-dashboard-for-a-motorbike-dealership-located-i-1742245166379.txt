@@ -1,0 +1,40 @@
+"Design a comprehensive Decision Support System (DSS) dashboard for a motorbike dealership located in Murang'a, Muranga County, Kenya. The dashboard should provide a clear and actionable overview of key business metrics, incorporating visual elements and interactive features.
+
+Specific Requirements:
+
+Data Focus:
+Include metrics related to sales, inventory, service/maintenance, and customer demographics.
+Consider local market trends and economic factors relevant to Murang'a.
+Key Performance Indicators (KPIs):
+Display Total Sales Revenue (current period).
+Show Sales Growth (percentage change, trend over time).
+Present Inventory Levels (key models, overall).
+Visualize Customer Demographics (age, location within Murang'a, etc.).
+Highlight Top Selling Models.
+Show number of Service/Maintenance Requests and trends over time.
+Visualizations:
+Use a combination of:
+Large number displays for key metrics.
+Line charts and bar charts for trends and comparisons.
+Pie charts for demographic distributions.
+Gauge charts for inventory levels.
+Scatter plots if relevant (e.g., customer purchase patterns vs. service requests).
+Interactive maps showing customer distribution and sales density within Murang'a county.
+Ensure all visualizations are clear, concise, and easy to interpret.
+Interactive Elements:
+Implement date range filters for flexible analysis.
+Include model/category filters for focused data views.
+Enable location filters to analyze data from different areas within Murang'a.
+Provide drill-down capabilities for detailed information.
+Incorporate a data table with search and sorting functionality.
+Consider alerts and notifications for critical metrics.
+Add the ability to export data.
+Layout and Design:
+Create a clean, modern, and intuitive dashboard layout.
+Use clear labels and color coding for easy understanding.
+Prioritize key metrics and visualizations for quick insights.
+Make sure that the design is responsive.
+Context:
+Remember this dashboard is for a motorbike dealership in Murang'a, Kenya.
+Consider local road conditions and seasonal demands.
+Assume the data is pulled from a database or CRM system.
