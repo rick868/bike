@@ -201,10 +201,9 @@ st.markdown("""
         <div>
 """ + (f"""
             <span style="margin-right: 1rem; color: #6c757d;">Welcome, {st.session_state.username}</span>
-            """ +  # Removed the <a> tag and onclick
+            """ + 
             """
             <button class="login-btn" onclick="window.location.href='/logout';">Logout</button>
-            # We need to handle the button click outside of markdown in the main Python flow.
             """ + """
 """ if st.session_state.authenticated else """
             <button class="login-btn" onclick="window.location.href='/login';">Login</button>
@@ -249,12 +248,13 @@ page = st.sidebar.selectbox(
      "🎯 What-If", "📥 Data"]
 )
 
-# Display logo and login button (moved here after authentication check)
-
 # Main content area
 if page == "🏠 Home":
     # Hero Section with updated branding
     st.markdown("<h1 class='centered-text'>Welcome to Voyager</h1>", unsafe_allow_html=True)
+    st.markdown("<h2 class='centered-text'>Motorcycle Dealership Intelligence Platform</h2>", unsafe_allow_html=True)
+
+    st.markdown("""
     st.markdown("<h2 class='centered-text'>Motorcycle Dealership Intelligence Platform</h2>", unsafe_allow_html=True)
 
     st.markdown("""
