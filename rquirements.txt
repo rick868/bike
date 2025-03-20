@@ -1,0 +1,10 @@
+numpy>=2.2.3
+pandas>=2.2.3
+plotly>=6.0.0
+prophet>=1.1.6
+psycopg2-binary>=2.9.10
+scikit-learn>=1.6.1
+scipy>=1.15.2
+sqlalchemy>=2.0.39
+statsmodels>=0.14.4
+streamlit>=1.43.2

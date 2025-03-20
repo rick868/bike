@@ -1,3 +1,4 @@
+import os
 import streamlit as st
 import pandas as pd
 import plotly.express as px
@@ -5,7 +6,7 @@ import plotly.graph_objects as go
 import numpy as np
 from database import get_db, init_db
 from data_generator import populate_database
-from models import MotorcycleDSS
+from models import MotorcycleDSS, Motorcycle
 from analytics import DataAnalytics, CRMAnalytics
 from utils import create_sales_trend_chart, create_inventory_pie_chart, create_customer_satisfaction_gauge, export_to_csv
 import logging
@@ -159,7 +160,9 @@ if st.session_state.authenticated:
         # Import additional sales data
         try:
             logger.info("Importing additional sales data...")
-            sales_data = pd.read_csv('UpdatedMotorcycleSales.csv')
+            sales_data_path = 'UpdatedMotorcycleSales.csv'
+            if os.path.exists(sales_data_path):
+                sales_data = pd.read_csv(sales_data_path)
             sales_data.to_sql('sales', next(get_db()).bind, if_exists='append', index=False)
             logger.info("Additional sales data imported successfully")
         except Exception as e:
@@ -198,9 +201,13 @@ st.markdown("""
         <div>
 """ + (f"""
             <span style="margin-right: 1rem; color: #6c757d;">Welcome, {st.session_state.username}</span>
-            <a href="#" class="login-btn" onclick="logoutClick()">Logout</a>
+            """ +  # Removed the <a> tag and onclick
+            """
+            <button class="login-btn" onclick="window.location.href='/logout';">Logout</button>
+            # We need to handle the button click outside of markdown in the main Python flow.
+            """ + """
 """ if st.session_state.authenticated else """
-            <a href="#" class="login-btn">Login</a>
+            <button class="login-btn" onclick="window.location.href='/login';">Login</button>
 """) + """
         </div>
     </div>
@@ -223,7 +230,10 @@ if not st.session_state.authenticated:
             else:
                 st.error("Invalid credentials")
 
-        st.markdown("</div>", unsafe_allow_html=True)
+    # Redirect to login if the flag is set
+    if st.session_state.get('redirect_to_login', False):
+        st.session_state.redirect_to_login = False  # Reset the flag
+        st.experimental_rerun()  # Rerun the app to show the login page
 
         # Show demo credentials for testing
         st.info("Demo credentials: username: admin, password: admin")
@@ -252,6 +262,10 @@ if page == "🏠 Home":
         Transform your dealership with AI-powered insights and advanced analytics
         </div>
     """, unsafe_allow_html=True)
+        # Add a logout button using st.button - outside the markdown for proper Streamlit handling
+    if st.session_state.authenticated: # Only show logout button if authenticated
+        if st.sidebar.button("Logout"): # Place it in sidebar or anywhere outside markdown
+         logout() # Call your Python logout function
 
     # Quick Stats
     try:
@@ -658,6 +672,8 @@ elif page == "📥 Data":
         if st.button("Import Data"):
             data_analytics.import_csv_data(uploaded_file, table_name)
             st.success(f"Data imported successfully to {table_name} table!")
+
+
 
     # Data Export
     st.subheader("Export Data")
