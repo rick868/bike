@@ -6,10 +6,13 @@ import plotly.graph_objects as go
 import numpy as np
 from database import get_db, init_db
 from data_generator import populate_database
-from models import MotorcycleDSS, Motorcycle
+from models import MotorcycleDSS, Motorcycle, User
 from analytics import DataAnalytics, CRMAnalytics
 from utils import create_sales_trend_chart, create_inventory_pie_chart, create_customer_satisfaction_gauge, export_to_csv
 import logging
+import bcrypt # Import bcrypt for password hashing
+from sqlalchemy.orm import Session
+from sqlalchemy.exc import IntegrityError # Import IntegrityError for handling duplicate entries
 
 # Configure logging
 logging.basicConfig(level=logging.INFO)
@@ -17,7 +20,7 @@ logger = logging.getLogger(__name__)
 
 # Page configuration
 st.set_page_config(
-    page_title="Voyager DSS",
+    page_title="Voyager Dealership",
     page_icon="🏍️",
     layout="wide",
     initial_sidebar_state="expanded"
@@ -134,14 +137,91 @@ st.markdown("""
     </style>
 """, unsafe_allow_html=True)
 
-# Login function
-def login(username, password):
-    # Demo credentials - In production, use proper authentication
-    if username == "admin" and password == "admin":
+# --- Authentication Functions ---
+
+def get_user_by_username(db: Session, username: str):
+    try:
+        return db.query(User).filter(User.username == username).first()
+    except Exception as e:
+        logger.error(f"Error retrieving user by username: {str(e)}")
+        return None
+
+
+def create_user(db: Session, username: str, password: str, role: str = 'user'):
+    hashed_password = bcrypt.hashpw(password.encode('utf-8'), bcrypt.gensalt()).decode('utf-8')
+    db_user = User(username=username, hashed_password=hashed_password,)
+    db.add(db_user)
+    db.commit()
+    db.refresh(db_user)
+    return db_user
+
+def verify_password(plain_password, hashed_password):
+    return bcrypt.checkpw(plain_password.encode('utf-8'), hashed_password.encode('utf-8'))
+
+def login(db: Session, username, password):
+    user = get_user_by_username(db, username)
+    if user and verify_password(password, user.hashed_password):
         st.session_state.authenticated = True
         st.session_state.username = username
         return True
     return False
+
+# --- Authentication Page ---
+def auth_page():
+    db = next(get_db())  # Initialize the database session
+    tab1, tab2 = st.tabs(["Login", "Register"])
+
+    with tab1:
+        login_username = st.text_input("Username")
+        login_password = st.text_input("Password", type="password")
+        if st.button("Login"):
+            # Use the initialized db session for login
+            if login(db, login_username, login_password):
+                st.success("Login successful!")
+
+                st.session_state.show_login_page = False
+                st.session_state.authenticated = True
+                st.rerun()
+            else:
+                st.error("Invalid credentials")
+            db.close()
+
+    with tab2:
+        signup_username = st.text_input("Username for Signup")
+        signup_password = st.text_input("Password for Signup", type="password")
+        signup_confirm_password = st.text_input("Confirm Password", type="password")
+
+        if st.button("Sign Up"):
+            try:
+                if get_user_by_username(db, signup_username):
+                    st.error("Username already taken. Please choose another.")
+                else:
+                    create_user(db, signup_username, signup_password,)  # Pass the role to the create_user function
+                st.success("Signup successful! Please log in.")
+                st.session_state.show_login_page = True
+                st.session_state.show_signup_page = False
+                st.rerun()
+            except IntegrityError:
+                st.error("Username already taken. Please choose another.")
+            if signup_password != signup_confirm_password:
+                st.error("Passwords do not match.")
+            elif len(signup_password) < 6:
+                st.error("Password must be at least 6 characters long.")
+            else:
+                try:
+                    db = next(get_db())
+                    create_user(db, signup_username, signup_password)
+                    st.success("Signup successful! Please log in.")
+                    st.session_state.show_login_page = True
+                    st.session_state.show_signup_page = False
+                    st.rerun()
+                except IntegrityError:
+                    st.error("Username already taken. Please choose another.")
+                except Exception as e:
+                    logger.error(f"Signup error: {str(e)}")
+                    st.error(f"Signup failed: {str(e)}")
+                finally:
+                    db.close()
 
 # Logout function
 def logout():
@@ -149,50 +229,11 @@ def logout():
     st.session_state.username = None
     st.rerun()
 
-# Initialize database and models only if authenticated or on login page
-if st.session_state.authenticated:
-    try:
-        logger.info("Initializing database...")
-        init_db()
-        logger.info("Populating database with sample data...")
-        populate_database()
-
-        # Import additional sales data
-        try:
-            logger.info("Importing additional sales data...")
-            sales_data_path = 'UpdatedMotorcycleSales.csv'
-            if os.path.exists(sales_data_path):
-                sales_data = pd.read_csv(sales_data_path)
-            sales_data.to_sql('sales', next(get_db()).bind, if_exists='append', index=False)
-            logger.info("Additional sales data imported successfully")
-        except Exception as e:
-            logger.warning(f"Could not import additional sales data: {str(e)}")
-
-        logger.info("Database initialization complete")
-    except Exception as e:
-        logger.error(f"Database initialization failed: {str(e)}")
-        st.error("Failed to initialize database. Please check the logs.")
-        st.stop()
-
-    try:
-        logger.info("Creating database session...")
-        db = next(get_db())
-        logger.info("Database session created successfully")
-    except Exception as e:
-        logger.error(f"Failed to create database session: {str(e)}")
-        st.error("Failed to connect to database. Please try again.")
-        st.stop()
-
-    try:
-        logger.info("Initializing DSS models...")
-        dss = MotorcycleDSS(db)
-        data_analytics = DataAnalytics(db)
-        crm_analytics = CRMAnalytics(db)
-        logger.info("Models initialized successfully")
-    except Exception as e:
-        logger.error(f"Failed to initialize models: {str(e)}")
-        st.error("Failed to initialize application models. Please check the logs.")
-        st.stop()
+# Initialize session state for authentication - simplified
+if 'authenticated' not in st.session_state:
+    st.session_state.authenticated = False
+if 'username' not in st.session_state:
+    st.session_state.username = None
 
 # Display header with logo
 st.markdown("""
@@ -201,8 +242,7 @@ st.markdown("""
         <div>
 """ + (f"""
             <span style="margin-right: 1rem; color: #6c757d;">Welcome, {st.session_state.username}</span>
-            """ + 
-            """
+            """ +  """
             <button class="login-btn" onclick="window.location.href='/logout';">Logout</button>
             """ + """
 """ if st.session_state.authenticated else """
@@ -212,32 +252,67 @@ st.markdown("""
     </div>
 """, unsafe_allow_html=True)
 
-# Login page when not authenticated
+# Initialize session state for dss if it doesn't exist
+if 'dss' not in st.session_state:
+    st.session_state.dss = MotorcycleDSS(next(get_db()))  # Initialize with the actual DSS class
+
+# Main application logic - Conditionally render auth page or main app
 if not st.session_state.authenticated:
-    st.markdown("<h1 class='centered-text'>Welcome to Voyager</h1>", unsafe_allow_html=True)
+    auth_page() # Show authentication page if not logged in
+else:
+    def display_header():
+        st.markdown("<h1 class='centered-text'>Welcome to Voyager</h1>", unsafe_allow_html=True)
+        st.markdown("<h2 class='centered-text'>Motorcycle Dealership Intelligence Platform</h2>", unsafe_allow_html=True)
 
-    with st.container():
-        st.markdown('<div class="login-container">', unsafe_allow_html=True)
-        st.subheader("Login")
-        username = st.text_input("Username")
-        password = st.text_input("Password", type="password")
+    display_header() # Display header after successful login
 
-        if st.button("Login"):
-            if login(username, password):
-                st.success("Login successful!")
-                st.rerun()
-            else:
-                st.error("Invalid credentials")
+    # Main application content (authenticated users)
 
-    # Redirect to login if the flag is set
-    if st.session_state.get('redirect_to_login', False):
-        st.session_state.redirect_to_login = False  # Reset the flag
-        st.experimental_rerun()  # Rerun the app to show the login page
+    # Initialize database and models (only once authenticated)
+    if 'db_initialized' not in st.session_state: # Check if initialized already
+        try:
+            logger.info("Initializing database...")
+            logger.error("Failed to initialize database. Please check the logs.")
+            init_db()
+            logger.info("Populating database with sample data...")
+            populate_database()
 
-        # Show demo credentials for testing
-        st.info("Demo credentials: username: admin, password: admin")
+            # Create default admin user if not exists (for initial setup)
+            db = next(get_db())
+            if not get_user_by_username(db, "admin"):
+                create_user(db, "admin", "admin") # Default admin/admin credentials
+                logger.info("Default admin user created.")
+            db.close()
 
-    st.stop()  # Stop execution if not authenticated
+            st.session_state.db_initialized = True # Mark as initialized
+            logger.info("Database initialization complete")
+        except Exception as e:
+            logger.error(f"Database initialization failed: {str(e)}")
+            st.error("Failed to initialize database. Please check the logs.")
+            st.stop()
+
+    try:
+        if 'dss_initialized' not in st.session_state: # Check if DSS models initialized
+            logger.info("Creating database session...")
+            db = next(get_db())
+            logger.info("Database session created successfully")
+            logger.info("Initializing DSS models...")
+            st.session_state.dss = MotorcycleDSS(db) # Store in session state
+            st.session_state.data_analytics = DataAnalytics(db) # Store in session state
+            st.session_state.crm_analytics = CRMAnalytics(db) # Store in session state
+            st.session_state.db_session = db # Store db session for later use if needed
+            st.session_state.dss_initialized = True # Mark DSS models as initialized
+            logger.info("Models initialized successfully")
+        else:
+            db = st.session_state.db_session # Reuse existing session
+            dss = st.session_state.dss
+            data_analytics = st.session_state.data_analytics
+            crm_analytics = st.session_state.crm_analytics
+
+    except Exception as e:
+        logger.error(f"Failed to initialize models: {str(e)}")
+        st.error("Failed to initialize application models. Please check the logs.")
+        st.stop()
 
 # Sidebar navigation with icons (only shown when authenticated)
 st.sidebar.title("Navigation")
@@ -247,31 +322,32 @@ page = st.sidebar.selectbox(
      "👥 Customers", "📈 Market", "🔮 Forecast", 
      "🎯 What-If", "📥 Data"]
 )
-
+# User Profile Display in Sidebar
+if st.session_state.authenticated:
+    st.sidebar.markdown("---") # Separator
+    st.sidebar.markdown(f"**User Profile**")
+    st.sidebar.markdown(f"**Username:** {st.session_state.username}")
+    st.sidebar.markdown("---") # Separator
+    
 # Main content area
 if page == "🏠 Home":
-    # Hero Section with updated branding
-    st.markdown("<h1 class='centered-text'>Welcome to Voyager</h1>", unsafe_allow_html=True)
-    st.markdown("<h2 class='centered-text'>Motorcycle Dealership Intelligence Platform</h2>", unsafe_allow_html=True)
-
-    st.markdown("""
-    st.markdown("<h2 class='centered-text'>Motorcycle Dealership Intelligence Platform</h2>", unsafe_allow_html=True)
 
     st.markdown("""
         <div class='centered-text'>
         Transform your dealership with AI-powered insights and advanced analytics
         </div>
     """, unsafe_allow_html=True)
-        # Add a logout button using st.button - outside the markdown for proper Streamlit handling
+
+    # Add a logout button using st.button - outside the markdown for proper Streamlit handling
     if st.session_state.authenticated: # Only show logout button if authenticated
         if st.sidebar.button("Logout"): # Place it in sidebar or anywhere outside markdown
-         logout() # Call your Python logout function
+            logout() # Call your Python logout function
 
     # Quick Stats
     try:
-        metrics = dss.get_inventory_metrics()
-        sales = dss.get_sales_metrics()
-        customers = dss.get_customer_metrics()
+        metrics = st.session_state.dss.get_inventory_metrics()
+        sales = st.session_state.dss.get_sales_metrics()
+        customers = st.session_state.dss.get_customer_metrics()
 
         col1, col2, col3 = st.columns(3)
         with col1:
@@ -293,7 +369,7 @@ if page == "🏠 Home":
         with st.container():
             st.markdown("""
             <div class='feature-box'>
-                <h4>📊 Sales Analytics</h4>
+                <h4>📊  Sales Analytics </h4>
                 <ul>
                     <li>Real-time sales tracking</li>
                     <li>Performance metrics</li>
@@ -305,7 +381,7 @@ if page == "🏠 Home":
         with st.container():
             st.markdown("""
                 <div class='feature-box'>
-                    <h4>🔮 Advanced Forecasting</h4>
+                   <h4>🔮 Advanced Forecasting </h4>
                     <ul>
                         <li>Machine learning models</li>
                         <li>Trend analysis</li>
@@ -318,7 +394,7 @@ if page == "🏠 Home":
         with st.container():
             st.markdown("""
             <div class='feature-box'>
-                <h4>👥 Customer Insights</h4>
+               <h4>👥 Customer Insights </h4>
                 <ul>
                     <li>Customer segmentation</li>
                     <li>Lifetime value analysis</li>
@@ -361,9 +437,9 @@ elif page == "📊 Dashboard":
 
     with st.spinner("Loading metrics..."):
         try:
-            inventory_metrics = dss.get_inventory_metrics()
-            sales_metrics = dss.get_sales_metrics()
-            customer_metrics = dss.get_customer_metrics()
+            inventory_metrics = st.session_state.dss.get_inventory_metrics()
+            sales_metrics = st.session_state.dss.get_sales_metrics()
+            customer_metrics = st.session_state.dss.get_customer_metrics()
 
             # KPI Cards using columns
             col1, col2, col3 = st.columns(3)
@@ -407,14 +483,14 @@ elif page == "📊 Dashboard":
             # Charts
             col1, col2 = st.columns(2)
             with col1:
-                sales_data = dss.get_sales_data()
+                sales_data = st.session_state.dss.get_sales_data()
                 st.plotly_chart(
                     create_sales_trend_chart(sales_data),
                     use_container_width=True
                 )
 
             with col2:
-                inventory_data = dss.get_inventory_data()
+                inventory_data = st.session_state.dss.get_inventory_data()
                 st.plotly_chart(
                     create_inventory_pie_chart(inventory_data),
                     use_container_width=True
@@ -431,10 +507,10 @@ elif page == "📦 Inventory":
     with st.expander("Add New Inventory"):
         col1, col2 = st.columns(2)
         with col1:
-            brand = st.selectbox("Brand", ['Honda', 'Yamaha', 'Kawasaki', 'Suzuki', 'Ducati', 'BMW', 'KTM'])
-            model_type = st.selectbox("Model Type", ['Sport', 'Cruiser', 'Adventure', 'Touring', 'Naked'])
+            brand = st.text_input("Brand", placeholder="Enter the brand of the motorcycle")
+            model_type = st.text_input("Model Type", placeholder="Enter the model type of the motorcycle")
         with col2:
-            price = st.number_input("Price", min_value=1000.0, max_value=50000.0, value=10000.0)
+            price = st.number_input("Price (KSH)", min_value=50000.0, value=1000000.0)
             stock = st.number_input("Stock", min_value=0, max_value=100, value=1)
 
         if st.button("Add Inventory"):
@@ -450,7 +526,7 @@ elif page == "📦 Inventory":
             st.success("Inventory added successfully!")
 
     # Display inventory table
-    inventory_data = dss.get_inventory_data()
+    inventory_data = st.session_state.dss.get_inventory_data()
     st.dataframe(inventory_data)
 
     # Export inventory
@@ -466,7 +542,7 @@ elif page == "💰 Sales":
     st.header("Sales Analytics")
 
     # Statistical Analysis
-    stats = data_analytics.statistical_analysis('sales')
+    stats = st.session_state.data_analytics.statistical_analysis('sales')
 
     col1, col2 = st.columns(2)
     with col1:
@@ -478,7 +554,7 @@ elif page == "💰 Sales":
 
     # Sales Trends
     st.subheader("Sales Trends")
-    sales_data = dss.get_sales_data()
+    sales_data = st.session_state.dss.get_sales_data()
     st.plotly_chart(create_sales_trend_chart(sales_data))
 
     # Regional Performance
@@ -491,7 +567,7 @@ elif page == "👥 Customers":
     st.header("Customer Insights")
 
     # Customer Segmentation
-    segments = data_analytics.customer_segmentation()
+    segments = st.session_state.data_analytics.customer_segmentation()
     st.subheader("Customer Segments")
 
     segment_df = pd.DataFrame(list(segments.items()), 
@@ -500,12 +576,12 @@ elif page == "👥 Customers":
                           title='Customer Segmentation'))
 
     # Customer Lifetime Value Analysis
-    clv_data = crm_analytics.customer_lifetime_value()
+    clv_data = st.session_state.crm_analytics.customer_lifetime_value()
     st.metric("Average Customer Lifetime Value", 
               f"${clv_data['average_clv']:,.2f}")
 
     # Churn Risk Analysis
-    churn_data = crm_analytics.churn_risk_analysis()
+    churn_data = st.session_state.crm_analytics.churn_risk_analysis()
     st.subheader("Churn Risk Distribution")
     churn_df = pd.DataFrame(list(churn_data.items()),
                            columns=['Risk Level', 'Count'])
@@ -562,7 +638,7 @@ elif page == "🔮 Forecast":
     # Generate forecast
     with st.spinner("Generating forecast..."):
         try:
-            forecast = data_analytics.sales_forecast(
+            forecast = st.session_state.data_analytics.sales_forecast(
                 periods=periods,
                 model_type=model_type,
                 params=params
@@ -652,7 +728,7 @@ elif page == "🎯 What-If":
         ["price_increase", "marketing_boost"]
     )
 
-    impact = data_analytics.what_if_analysis(scenario)
+    impact = st.session_state.data_analytics.what_if_analysis(scenario)
 
     st.subheader("Scenario Impact Analysis")
     for metric, value in impact.items():
@@ -670,10 +746,8 @@ elif page == "📥 Data":
         )
 
         if st.button("Import Data"):
-            data_analytics.import_csv_data(uploaded_file, table_name)
+            st.session_state.data_analytics.import_csv_data(uploaded_file, table_name)
             st.success(f"Data imported successfully to {table_name} table!")
-
-
 
     # Data Export
     st.subheader("Export Data")

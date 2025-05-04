@@ -1,25 +1,86 @@
 from sqlalchemy.orm import Session
+from sqlalchemy import JSON, Text, create_engine, Column, Integer, String, Float, Date, ForeignKey
+from sqlalchemy.orm import relationship, declarative_base, sessionmaker
+from sqlalchemy.ext.declarative import declarative_base
 from sqlalchemy import func
 from datetime import datetime, timedelta
 import numpy as np
 import pandas as pd
 from database import Motorcycle, Sale, Customer
 
+Base = declarative_base()
+
+class User(Base):  # Define User model
+    __tablename__ = 'users'
+    id = Column(Integer, primary_key=True, index=True, autoincrement=True)
+    username = Column(String, unique=True, index=True, nullable=False)
+    hashed_password = Column(String, nullable=False)  # Store hashed password
+
+class Motorcycle(Base):
+    __tablename__ = 'motorcycles'
+    id = Column(Integer, primary_key=True, index=True)
+    brand = Column(String)
+    model_type = Column(String)
+    year = Column(Integer)
+    price = Column(Float)
+    stock = Column(Integer)
+    specifications = Column(JSON)  # Store detailed specs
+    market_position = Column(Text)  # Market positioning data
+    competitor_prices = Column(JSON)  # Competitor pricing data
+
+class Customer(Base):
+    __tablename__ = 'customers'
+    id = Column(Integer, primary_key=True, index=True)
+    name = Column(String) # Assuming you've corrected this column name
+    email = Column(String)
+    phone = Column(String)
+    lifetime_value = Column(Float)
+    purchases = Column(Integer)
+    satisfaction_score = Column(Float)
+
+class Sales(Base):
+    __tablename__ = 'sales'
+    id = Column(Integer, primary_key=True, index=True)
+    date = Column(Date)
+    motorcycle_id = Column(Integer, ForeignKey('motorcycles.id'))
+    customer_id = Column(Integer, ForeignKey('customers.id'))
+    sales_amount = Column(Float)
+    units_sold = Column(Integer)
+    customer_satisfaction = Column(Float)  # Customer satisfaction score
+    sales_channel = Column(String)  # Online/Offline/Dealer
+    promotion_applied = Column(String)  # Type of promotion if any
+    sales_region = Column(String)  # Sales region
+    motorcycle = relationship("Motorcycle")
+    customer = relationship("Customer")
+
+class MarketData(Base):
+    __tablename__ = 'market_data'
+    id = Column(Integer, primary_key=True, index=True)
+    date = Column(Date)
+    market_share = Column(Float)
+    competitor_data = Column(JSON)
+    economic_indicators = Column(JSON)  # GDP, disposable income, etc.
+    seasonal_factors = Column(JSON)
+    trend_indicators = Column(JSON)
+
 class MotorcycleDSS:
     def __init__(self, db: Session):
         self.db = db
 
     def get_inventory_metrics(self):
-        total_inventory = self.db.query(func.sum(Motorcycle.stock)).scalar() or 0
-        avg_price = self.db.query(func.avg(Motorcycle.price)).scalar() or 0
-        low_stock_items = self.db.query(Motorcycle).filter(Motorcycle.stock < 5).count()
-
-        return {
-            'total_inventory': total_inventory,
-            'avg_price': float(avg_price),
-            'low_stock_items': low_stock_items
-        }
-
+        try:
+            print("Fetching inventory metrics...") # Debug print
+            total_inventory = self.db.query(Motorcycle).count()
+            avg_price = self.db.query(func.avg(Motorcycle.price)).scalar()
+            print("Inventory metrics fetched successfully.") # Debug print
+            return {
+                'total_inventory': total_inventory,
+                'avg_price': avg_price if avg_price else 0  # Handle potential None
+            }
+        except Exception as e:
+            print(f"Error fetching inventory metrics: {e}") # Error print
+            raise # Re-raise the exception to be caught in app.py
+    
     def get_sales_metrics(self):
         total_sales = self.db.query(func.sum(Sale.sales_amount)).scalar() or 0
         avg_satisfaction = self.db.query(func.avg(Sale.customer_satisfaction)).scalar() or 0

@@ -6,8 +6,7 @@ from database import engine, Base, SessionLocal, Motorcycle, Sale, Customer
 def populate_database():
     db = SessionLocal()
 
-    # Drop existing tables and recreate
-    Base.metadata.drop_all(bind=engine)
+    # Ensure tables exist
     Base.metadata.create_all(bind=engine)
 
     # Check if data already exists
@@ -44,9 +43,24 @@ def populate_database():
     # Commit customers before creating sales
     db.commit()
 
+    # Commit motorcycles first
+    db.commit()
+
+    # Generate customer data
+    for _ in range(200):
+        customer = Customer(
+            lifetime_value=round(np.random.uniform(5000, 100000), 2),
+            purchases=np.random.randint(1, 5),
+            satisfaction_score=round(np.random.uniform(3.0, 5.0), 1)
+        )
+        db.add(customer)
+
+    # Commit customers before creating sales
+    db.commit()
+
     # Get all motorcycles and customers for sales generation
-    motorcycles = db.query(Motorcycle).all()
-    customers = db.query(Customer).all()
+    motorcycles = db.query(Motorcycle).limit(100).all()
+    customers = db.query(Customer).limit(200).all()
 
     # Generate sales data
     dates = pd.date_range(

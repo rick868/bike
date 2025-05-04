@@ -202,6 +202,7 @@ class DataAnalytics:
 
     def _calculate_growth_rate(self, df, column):
         """Calculate year-over-year growth rate"""
+        df['date'] = pd.to_datetime(df['date'])
         current = df[column].sum()
         previous = df[df['date'] <= datetime.now() - timedelta(days=365)][column].sum()
         return (current - previous) / previous * 100 if previous else 0
@@ -219,6 +220,18 @@ class CRMAnalytics:
     def customer_lifetime_value(self):
         """Calculate and analyze customer lifetime value"""
         customer_df = pd.read_sql('SELECT * FROM customers', self.db.bind)
+
+        print("Columns in customer_df:", customer_df.columns) 
+        
+            # Combine first and last name into a 'name' column (if these columns exist)
+        if 'first_name' in customer_df.columns and 'last_name' in customer_df.columns:
+            customer_df['name'] = customer_df['first_name'] + ' ' + customer_df['last_name']
+        elif 'customer_name' in customer_df.columns: # Or if it's 'customer_name'
+            customer_df = customer_df.rename(columns={'customer_name': 'name'}) # Rename to 'name'
+        else:
+            logger.warning("No valid name column found in customer_df.")
+            customer_df['name'] = 'Unknown'  # Assign a default value if no names are available
+            
         clv_analysis = {
             'average_clv': customer_df['lifetime_value'].mean(),
             'median_clv': customer_df['lifetime_value'].median(),
@@ -229,22 +242,8 @@ class CRMAnalytics:
     def churn_risk_analysis(self):
         """Identify customers at risk of churning"""
         customers = pd.read_sql('''
-            SELECT c.*, COUNT(s.id) as recent_purchases
+            SELECT c.id, c.first_name, c.last_name, c.email, c.phone, c.lifetime_value, c.purchases, c.satisfaction_score, COUNT(s.id) as recent_purchases
             FROM customers c
             LEFT JOIN sales s ON c.id = s.customer_id
-            AND s.date >= NOW() - INTERVAL '6 months'
-            GROUP BY c.id
-        ''', self.db.bind)
-
-        customers['churn_risk'] = np.where(
-            (customers['recent_purchases'] == 0) &
-            (customers['satisfaction_score'] < 3.5),
-            'High',
-            np.where(
-                customers['satisfaction_score'] < 4.0,
-                'Medium',
-                'Low'
-            )
-        )
-
-        return customers.groupby('churn_risk').size().to_dict()
+            GROUP BY c.id, c.first_name, c.last_name, c.email, c.phone, c.lifetime_value, c.purchases, c.satisfaction_score
+        ''', self.db)
